@@ -1,0 +1,737 @@
+html
+{
+    width: 100%;
+    height:100%;
+}
+body
+{
+    font-size: 1.5rem;
+    color: #b2bdcf;
+    width: 100%;
+    height: 100%;
+    background: url("../images/BackgroundImage.jpg")no-repeat;
+    background-size:100% 100%;
+    -webkit-background-size: 100% 100%;
+    -o-background-size:100% 100%;
+    background-size:100% 100%;
+    background-position: 50%;
+    transform-origin: left top;
+    overflow:hidden;
+    transition:all 0.5s;
+}
+
+.containers{
+    width: 80%;
+    height: 70%;
+    position: relative;
+    top: -5%;
+}
+.form-control1 {
+    display: block;
+    width: 100%;
+    height: 34px;
+    left: 50%;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #ffffff;
+    background-color: #040f35;
+    background-image: none;
+    border: 1px solid #3e57cc;
+    border-radius: 3px;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+    -webkit-transition: border-color ease-in-out .15s, -webkit-box-shadow ease-in-out .15s;
+    -o-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+    transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+}
+.form-control1:focus {
+    border-color: #66afe9;
+    outline: 0;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, .6);
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, .6);
+}
+.form-control1::-moz-placeholder {
+    color: #526D94;
+    opacity: 1;
+}
+.form-control1:-ms-input-placeholder {
+    color: #999;
+}
+.form-control1::-webkit-input-placeholder {
+    color: #999;
+}
+.form-control1::-ms-expand {
+    background-color: transparent;
+    border: 0;
+}
+.form-control1[disabled],
+.form-control1[readonly],
+fieldset[disabled] .form-control {
+    background-color: #eee;
+    opacity: 1;
+}
+.form-control1[disabled],
+fieldset[disabled] .form-control {
+    cursor: not-allowed;
+}
+.button_2{
+    position: absolute;
+    top: 2%;
+    left: 100%;
+    width: 15%;
+    height: 8%;
+    font-size: 1.5rem;
+}
+.button_3{
+    width: 100%;
+    height: 100%;
+    border: none;
+    border-radius: 15px;
+    background: linear-gradient(0deg, rgba(33, 73, 134, 0.36), rgb(3, 13, 34),#214986);
+    color: rgb(247, 255, 247);
+    letter-spacing:3px;
+    transition:all 0.5s;
+
+}
+.button_3:hover{
+    width: 110%;
+    height: 110%;
+    background: linear-gradient(0deg, rgb(127, 174, 255), rgb(3, 13, 34), #7faeff);
+    color: rgb(226, 232, 255);
+
+
+}
+.position{
+    margin-top: 50px;
+    margin-left: 50px;
+    margin-bottom: 20px;
+    position: relative;
+    height: 5%;
+    width: 15%;
+}
+.position_1{
+    position: relative;
+    position: absolute;
+    height: 5%;
+    width: 15%;
+    top: 0%;
+    left: 60%;
+}
+.position_2{
+    position: relative;
+    position: absolute;
+    height: 5%;
+    width: 15%;
+    top: 10%;
+    left: 4%;
+}
+.position_3{
+    position: relative;
+    position: absolute;
+    height: 5%;
+    width: 23%;
+    top: 10%;
+    left: 23%;
+}
+.position_4{
+    position: absolute;
+    height: 5%;
+    width: 15%;
+    top: 19.5%;
+    left: 3.7%;
+}
+.position_5{
+    position: absolute;
+    height: 5%;
+    width: 15%;
+    top: 30%;
+    left: 3.7%;
+}
+.span_11{
+    position: absolute;
+    top: 15%;
+    font-size: 1.3rem;
+    letter-spacing: 5px;
+}
+.span_1{
+    position: absolute;
+    top: 23%;
+    font-size: 1.3rem;
+    transition:all 0.2s;
+}
+.span_2{
+    position: absolute;
+    top: 30%;
+    font-size: 1.3rem;
+    left: 10%;
+}
+.text_1{
+    position: absolute;
+    top: 10%;
+    left: 35%;
+}
+.button{
+    position: absolute;
+    left: 38%;
+    top: 25%;
+    width: 60%;
+    height: 100%;
+}
+.button_1{
+    position: absolute;
+    left: 36%;
+    top: 10%;
+    width: 60%;
+    height: 100%;
+}
+.Slider{
+    position: absolute;
+    top: 1%;
+    left:23%;
+    height: 5%;
+    width: 33%;
+}
+.Slider_1{
+    position: absolute;
+    top:21%;
+    left:23%;
+    height: 5%;
+    width: 33%;
+}
+.InputBox{
+    width: 10%;
+    height: 10%;
+    display: inline-block;
+    margin-left: 3%;
+}
+.InputBox_2{
+    width: 10%;
+    height: 10%;
+    display: inline-block;
+    margin-left: 3%;
+}
+.InputBox_1{
+     background: #0E2D65;
+     border: 1px #606365 solid;
+     width: 100%;
+ }
+.InputBox_3{
+    background: #0E2D65;
+    border: 1px #606365 solid;
+    width: 100%;
+}
+.sensitivity{
+display: inline-block;
+    font-size: 1.5rem;
+    margin-right: 10%;
+}
+.Slider_2{
+    position: absolute;
+    top:32%;
+    left:23%;
+    height: 5%;
+    width: 33%;
+}
+.position_6{
+    position: absolute;
+    height: 5%;
+    width: 15%;
+    top: 40%;
+    left: 3.7%;
+}
+.input1{
+    position: absolute;
+    top: 40%;
+    left:22.5%;
+}
+.input2{
+     width: 50%;
+     height: 50%;
+     position: absolute;
+     top: 85%;
+     left:80%;
+ }
+.input3{
+    width: 50%;
+    height: 50%;
+    position: absolute;
+    top: 95%;
+    left:80%;
+}
+.input4{
+    width: 50%;
+    height: 50%;
+    position: absolute;
+    top: 95%;
+    left:22.5%;
+}
+.rld{
+    width: 15%;
+    height: 12%;
+    transition:all 0.5s;
+}
+.rld:hover{
+    width: 120px;
+    height: 40px;
+}
+.position_7{
+    position: absolute;
+    height: 5%;
+    width: 15%;
+    top: 55%;
+    left: 3.5%;
+}
+.Slider_3{
+    position: absolute;
+    top:56%;
+    left:23%;
+    height: 5%;
+    width: 33%;
+}
+.ad{
+    position: absolute;
+    top:50%;
+    left:3%;
+}
+.ad >img:hover{
+    width: 110%;
+    height: 110%;
+}
+.position_8{
+    position: absolute;
+    height: 5%;
+    width: 15%;
+    top: 65%;
+    left: 3.5%;
+}
+.Slider_4{
+    position: absolute;
+    top:66%;
+    left:23%;
+    height: 5%;
+    width: 33%
+}
+.Slider_5{
+    position: absolute;
+    top:76%;
+    left:23%;
+    height: 5%;
+    width: 33%
+}
+.position_9{
+    position: absolute;
+    height: 5%;
+    width: 15%;
+    top: 75%;
+    left: 3.5%;
+}
+.position_10{
+    position: absolute;
+    height: 5%;
+    width: 15%;
+    top: 85%;
+    left: 3.5%;
+}
+.Slider_6{
+    position: absolute;
+    top:86%;
+    left:23%;
+    height: 5%;
+    width: 33%
+}
+.position_11{
+     position: absolute;
+     height: 5%;
+     width: 15%;
+     top: 55%;
+     left: 60%;
+ }
+.position_20{
+    position: absolute;
+    height: 5%;
+    width: 15%;
+    top: 95%;
+    left: 3.5%;
+}
+.e{
+    height: 10%;
+    top: 75%;
+    left: 76.3%;
+    width: 7.5%;
+    position: absolute;
+
+}
+.text_10{
+    position: absolute;
+    background:#0E2D65;
+    border: rgba(106, 90, 205, 0.51) solid 1px;
+}
+.text_10:hover{
+    background:#0E2D65;
+    border: #ffffff solid 1px;
+}
+.Slider_7{
+    position: absolute;
+    top:55%;
+    left:80%;
+    height: 5%;
+    width: 33%
+}
+.Slider_8{
+    position: absolute;
+    top:65%;
+    left:80%;
+    height: 5%;
+    width: 33%
+}
+.position_12{
+    position: absolute;
+    height: 5%;
+    width: 15%;
+    top: 65%;
+    left: 60%;
+}
+.position_13{
+    position: absolute;
+    height: 5%;
+    width: 15%;
+    top: 75%;
+    left: 60%;
+}
+.position_14{
+    position: absolute;
+    height: 5%;
+    width: 15%;
+    top: 85%;
+    left: 60%;
+}
+.position_15{
+    position: absolute;
+    height: 5%;
+    width: 15%;
+    top: 75%;
+    left: 80%;
+}
+.position_16{
+    position: absolute;
+    height: 5%;
+    width: 15%;
+    top: 85%;
+    left: 80%
+}
+.ps{
+    width: 50%;
+    position: absolute;
+    top: 105%;
+    left: 3.5%
+}
+.position_18{
+    border: 1px solid rgba(192, 192, 192, 0.17);
+    background: #08123B;
+    width: 72%;
+    margin-left: 10%;
+}
+.position_18 img{
+    float: left;
+    margin-left: 6%;
+}
+.position_18_1{
+   width: 100%;
+    height: 130px;
+    overflow:auto;
+    border: 1px solid rgba(192, 192, 192, 0.17);
+}
+.span_3{
+    margin: 8px auto;
+}
+.span_3 >span{
+border: #B2BDCF;
+}
+.ps_1{
+    width: 50%;
+    position: absolute;
+    top: 105%;
+    left:50%
+}
+.position_15{
+    position: absolute;
+    height: 5%;
+    width: 15%;
+    top: 95%;
+    left: 60%;
+}
+.plus{
+    border-radius:3px;
+    padding-left: 5px;
+    position: absolute;
+    width: 30px;
+    height: 29px;
+    top: 33%;
+    left: 82.5%;
+    background:#0D254F;
+    cursor: pointer;
+    border: 1px rgba(192, 192, 192, 0.16) solid;
+}
+.plus:hover{
+    background: rgba(115, 147, 197, 0.72);
+}
+.plus_1{
+    border-radius:3px;
+    padding-left: 5px;
+    position: absolute;
+    width: 30px;
+    height: 29px;
+    top: 34%;
+    left: 82.5%;
+    background:#0D254F;
+    cursor: pointer;
+    border: 1px rgba(192, 192, 192, 0.16) solid;
+}
+.plus_1:hover{
+    background: rgba(115, 147, 197, 0.72);
+}
+
+
+/*弹出层*/
+.Popup_1{
+    background-color: #072E69;
+    z-index: 999;
+    width: 60%;
+    height: 60%;
+    position:fixed;
+    top:0;
+    right:0;
+    left:0;
+    bottom:0;
+    margin:auto;
+    display: none;
+}
+.Popup_1>img{
+    position:absolute;
+    top:0%;
+    right:0;
+    left:0;
+    bottom:0;
+    margin:auto;
+    height: 85%;
+    width: 80%;
+}
+canvas{
+     border: 1px solid seagreen;
+    background: aliceblue;
+}
+
+
+
+
+/*---------------滑动条-----------------*/
+.progress1{position: relative; width:300px;margin: auto;display: inline-block}
+.progress_bg1{height: 10px; border: 1px solid rgba(255, 255, 255, 0.25); border-radius: 5px; overflow: hidden;background-color: #0e2d65;}
+.progress_bar1{background: linear-gradient(#6bb6f1, #135493); width: 0; height: 10px; border-radius: 5px;}
+.progress_btn1{width: 25px; height: 25px; position: absolute;background: #0e2d65;
+left: 0px; margin-left: -10px; top:-2px; cursor: pointer;;box-sizing:border-box;
+background:url("../images/RoundBall1.png ")no-repeat }
+.progress_btn1:hover{border-color:#F7B824;}
+.text{
+    position: absolute;
+    left: 45%;
+}
+
+.progress2{position: relative; width:300px;margin: auto;display: inline-block}
+.progress_bg2{height: 10px; border: 1px solid rgba(255, 255, 255, 0.25); border-radius: 5px; overflow: hidden;background-color: #0e2d65;}
+.progress_bar2{background: linear-gradient(#6bb6f1, #135493); width: 0; height: 10px; border-radius: 5px;}
+.progress_btn2{width: 25px; height: 25px; position: absolute;background: #0e2d65;
+    left: 0px; margin-left: -10px; top:-2px; cursor: pointer;;box-sizing:border-box;
+    background:url("../images/RoundBall1.png ")no-repeat }
+.progress_btn2:hover{border-color:#F7B824;}
+.text_2{
+    position: absolute;
+    left: 45%;
+}
+.progress3{position: relative; width:300px;margin: auto;display: inline-block}
+.progress_bg3{height: 10px; border: 1px solid rgba(255, 255, 255, 0.25); border-radius: 5px; overflow: hidden;background-color: #0e2d65;}
+.progress_bar3{background: linear-gradient(#6bb6f1, #135493); width: 0; height: 10px; border-radius: 5px;}
+.progress_btn3{width: 25px; height: 25px; position: absolute;background: #0e2d65;
+    left: 0px; margin-left: -10px; top:-2px; cursor: pointer;;box-sizing:border-box;
+    background:url("../images/RoundBall1.png ")no-repeat }
+.progress_btn3:hover{border-color:#F7B824;}
+.text_3{
+    position: absolute;
+    left: 45%;
+}
+
+.progress4{position: relative; width:300px;margin: auto;display: inline-block}
+.progress_bg4{height: 10px; border: 1px solid rgba(255, 255, 255, 0.25); border-radius: 5px; overflow: hidden;background-color: #0e2d65;}
+.progress_bar4{background: linear-gradient(#6bb6f1, #135493); width: 0; height: 10px; border-radius: 5px;}
+.progress_btn4{width: 25px; height: 25px; position: absolute;background: #0e2d65;
+    left: 0px; margin-left: -10px; top:-2px; cursor: pointer;;box-sizing:border-box;
+    background:url("../images/RoundBall1.png ")no-repeat }
+.progress_btn4:hover{border-color:#F7B824;}
+.text_4{
+    position: absolute;
+    left: 45%;
+}
+
+.progress5{position: relative; width:300px;margin: auto;display: inline-block}
+.progress_bg5{height: 10px; border: 1px solid rgba(255, 255, 255, 0.25); border-radius: 5px; overflow: hidden;background-color: #0e2d65;}
+.progress_bar5{background: linear-gradient(#6bb6f1, #135493); width: 0; height: 10px; border-radius: 5px;}
+.progress_btn5{width: 25px; height: 25px; position: absolute;background: #0e2d65;
+    left: 0px; margin-left: -10px; top:-2px; cursor: pointer;;box-sizing:border-box;
+    background:url("../images/RoundBall1.png ")no-repeat }
+.progress_btn5:hover{border-color:#F7B824;}
+.text_5{
+    position: absolute;
+    left: 45%;
+}
+
+.progress6{position: relative; width:300px;margin: auto;display: inline-block}
+.progress_bg6{height: 10px; border: 1px solid rgba(255, 255, 255, 0.25); border-radius: 5px; overflow: hidden;background-color: #0e2d65;}
+.progress_bar6{background: linear-gradient(#6bb6f1, #135493); width: 0; height: 10px; border-radius: 5px;}
+.progress_btn6{width: 25px; height: 25px; position: absolute;background: #0e2d65;
+    left: 0px; margin-left: -10px; top:-2px; cursor: pointer;;box-sizing:border-box;
+    background:url("../images/RoundBall1.png ")no-repeat }
+.progress_btn6:hover{border-color:#F7B824;}
+.text_6{
+    position: absolute;
+    left: 45%;
+}
+
+.progress7{position: relative; width:300px;margin: auto;display: inline-block}
+.progress_bg7{height: 10px; border: 1px solid rgba(255, 255, 255, 0.25); border-radius: 5px; overflow: hidden;background-color: #0e2d65;}
+.progress_bar7{background: linear-gradient(#6bb6f1, #135493); width: 0; height: 10px; border-radius: 5px;}
+.progress_btn7{width: 25px; height: 25px; position: absolute;background: #0e2d65;
+    left: 0px; margin-left: -10px; top:-2px; cursor: pointer;;box-sizing:border-box;
+    background:url("../images/RoundBall1.png ")no-repeat }
+.progress_btn7:hover{border-color:#F7B824;}
+.text_7{
+    position: absolute;
+    left: 45%;
+}
+
+.progress8{position: relative; width:300px;margin: auto;display: inline-block}
+.progress_bg8{height: 10px; border: 1px solid rgba(255, 255, 255, 0.25); border-radius: 5px; overflow: hidden;background-color: #0e2d65;}
+.progress_bar8{background: linear-gradient(#6bb6f1, #135493); width: 0; height: 10px; border-radius: 5px;}
+.progress_btn8{width: 25px; height: 25px; position: absolute;background: #0e2d65;
+    left: 0px; margin-left: -10px; top:-2px; cursor: pointer;;box-sizing:border-box;
+    background:url("../images/RoundBall1.png ")no-repeat }
+.progress_btn8:hover{border-color:#F7B824;}
+.text_8{
+    position: absolute;
+    left: 45%;
+}
+
+.progress9{position: relative; width:300px;margin: auto;display: inline-block}
+.progress_bg9{height: 10px; border: 1px solid rgba(255, 255, 255, 0.25); border-radius: 5px; overflow: hidden;background-color: #0e2d65;}
+.progress_bar9{background: linear-gradient(#6bb6f1, #135493); width: 0; height: 10px; border-radius: 5px;}
+.progress_btn9{width: 25px; height: 25px; position: absolute;background: #0e2d65;
+    left: 0px; margin-left: -10px; top:-2px; cursor: pointer;;box-sizing:border-box;
+    background:url("../images/RoundBall1.png ")no-repeat }
+.progress_btn9:hover{border-color:#F7B824;}
+.text_9{
+    position: absolute;
+    left: 45%;
+}
+
+
+
+
+
+@media (max-width: 1631px) {
+    .position{
+        margin-left: 40px;
+    }
+    .progress1 {
+        width:200px
+    }
+    .progress2{
+        width: 200px;
+    }
+    .progress3{
+          width: 200px;
+      }
+    .progress4 {
+        width:200px
+    }
+    .progress5{
+        width: 200px;
+    }
+    .progress6{
+        width: 200px;
+    } .progress3{
+          width: 200px;
+      }
+    .progress7 {
+        width:200px
+    }
+    .progress8{
+        width: 200px;
+    }
+    .progress9{
+        width: 200px;
+    }
+    .form-control1{
+        width: 70%;
+    }
+    .Slider{
+        width: 30%;
+    }
+    .e{
+        width: 15%;
+        left: 72.5%;
+    }
+    .ad >img{
+        width: 70%;
+        height: 70%;
+    }
+    .position_17>img{
+        width: 25%;
+        height: 25%;
+    }
+    .button_2{
+        width: 140px;
+    }
+    .button_3{
+        width: 100%;
+    }
+}
+@media (max-width: 991px) {
+    .position{
+        margin-left: 29px;
+    }
+    .progress1 {
+        width:100px
+    }
+    .progress2 {
+        width:100px
+    }
+    .progress3{
+        width: 100px;
+    }.progress4 {
+             width:100px
+         }
+    .progress5 {
+        width:100px
+    }
+    .progress6{
+        width: 100px;
+    }.progress7 {
+             width:100px
+         }
+    .progress8 {
+        width:100px
+    }
+    .progress9{
+        width: 100px;
+    }
+    .position_2{
+        left: 4%;
+    }
+    .button_2{
+        width: 10%;
+    }
+    .button_3{
+        width: 130%;
+    }
+}
+

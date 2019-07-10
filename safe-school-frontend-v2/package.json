@@ -1,0 +1,16 @@
+{
+    "name": "safe-school-frontend-v2",
+    "version": "1.0.0",
+    "description": "校园安全平台前端页面",
+    "main": "index.js",
+    "dependencies": {
+        "axios": "^0.19.0",
+        "jquery": "^3.4.1"
+    },
+    "devDependencies": {},
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "author": "dc",
+    "license": "ISC"
+}

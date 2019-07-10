@@ -1,0 +1,750 @@
+<!-- 校园安全平台首页-大屏版 -->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script src="http://cdn.highcharts.com.cn/highcharts/highcharts.js"></script>
+    <style type="text/css">
+        * {
+            margin: 0;
+            padding: 0;
+            color: #F9F5FF;
+        }
+        
+        body,
+        html {
+            width: 100%;
+            height: 100%;
+        }
+        
+        .container {
+            background: #000519;
+            box-sizing: border-box;
+            padding: 20px;
+        }
+        
+        header {
+            height: 106px;
+            position: relative;
+        }
+        
+        .title {
+            /*text-decoration: underline;*/
+            width: 684px;
+            height: 106px;
+            text-align: center;
+            font-weight: bold;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            margin: auto;
+            font-size: 42px;
+            line-height: 100px;
+            background: url(../images/center.png);
+            /*				background-size: 100% 100%;
+*/
+        }
+        
+        .head_detail {
+            float: right;
+            font-size: 20px;
+            line-height: 51px;
+        }
+        
+        .con_left {
+            float: left;
+            width: 55%;
+            height: 734px;
+        }
+        
+        .temp {
+            width: 100%;
+            height: 100%;
+            overflow-x: hidden;
+            overflow-y: auto;
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: flex-start;
+        }
+        
+        .temp li {
+            width: 19.5%;
+            height: 150px;
+            border: 1px solid transparent;
+        }
+        
+        .temp li:hover {
+            border: 1px solid #1574FD;
+        }
+        
+        .temp li img {
+            width: 100%;
+            height: 100%;
+        }
+        
+        .end {
+            width: 100%;
+            height: 200px;
+            background: rgba(0, 10, 46, 0.5);
+            box-shadow: 0px 0px 15px 3px rgba(0, 97, 153, 0.5);
+            border-radius: 4px;
+            margin: 20px 0;
+            box-sizing: border-box;
+            padding: 0 10px;
+        }
+        
+        .end_left {
+            display: inline-block;
+            margin: 10px;
+        }
+        
+        .end_right {
+            float: right;
+            /*margin: 10px;*/
+        }
+        
+        .end_right span {
+            margin-right: 10px;
+        }
+        
+        .event_info {
+            height: 40px;
+            border-bottom: 1px solid #31C7F4;
+            line-height: 38px;
+        }
+        
+        .event_info_left {
+            float: left;
+        }
+        
+        .event_info_right {
+            float: right;
+        }
+        
+        .event_info .time {
+            font-size: 12px;
+            font-weight: normal;
+        }
+        
+        .event_info i {
+            font-style: normal;
+        }
+        
+        .con_right {
+            float: right;
+            width: 44%;
+        }
+        
+        .warn img {
+            width: 50px;
+            float: left;
+            margin: 13px 26px;
+        }
+        
+        .warn {
+            display: flex;
+            flex-wrap: wrap;
+            list-style: none;
+            justify-content: space-between;
+            background: rgba(0, 10, 46, 0.5);
+            box-shadow: 0px 0px 15px 3px rgba(0, 97, 153, 0.5);
+            border-radius: 4px;
+            width: 100%;
+            height: 300px;
+            overflow-x: hidden;
+            overflow-y: auto;
+        }
+        
+        .list {
+            width: 20%;
+            height: 80px;
+            margin: 10px;
+            background: rgba(0, 10, 46, 0.5);
+            box-shadow: 0px 0px 15px 3px rgba(0, 97, 153, 0.5);
+            border-radius: 4px;
+        }
+        
+        .list img {
+            width: 25px;
+            height: 32px;
+        }
+        
+        .list p {
+            line-height: 40px;
+        }
+        
+        .list span {
+            font-size: 20px;
+        }
+        
+        .charts {
+            width: 100%;
+            height: 340px;
+            background: rgba(0, 10, 46, 0.5);
+            box-shadow: 0px 0px 15px 3px rgba(0, 97, 153, 0.5);
+            border-radius: 4px;
+            margin: 20px 0;
+        }
+        
+        .person_info {
+            width: 100%;
+            height: 290px;
+            background: rgba(0, 10, 46, 0.5);
+            box-shadow: 0px 0px 15px 3px rgba(0, 97, 153, 0.5);
+            border-radius: 4px;
+            overflow-y: auto;
+            margin-top: 20px;
+        }
+        
+        .person_info .headphoto {
+            width: 100px;
+            height: 100px;
+            background: url(../images/photo_box.png);
+            background-size: 100% 100%;
+        }
+        
+        .person_box {
+            width: 100%;
+            height: 100%;
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+        
+        .person_box li {
+            width: 22%;
+            height: 220px;
+            box-sizing: border-box;
+            padding: 5px 10px;
+            font-size: 14px;
+        }
+        
+        .person_box li div {
+            margin: 5px 0;
+        }
+        
+        .headphoto img {
+            width: 100%;
+            border-radius: 50%;
+        }
+        
+        .event_info h3 {
+            display: inline-block;
+            width: 20px;
+            text-align: center;
+        }
+        
+        .event_info img {
+            vertical-align: middle;
+        }
+        
+        .end_right img {
+            vertical-align: middle;
+            margin-right: 5px;
+        }
+        
+        .head_detail p {
+            padding: 0 10px;
+        }
+        
+        .head_detail p img {
+            margin: 0 10px;
+        }
+        
+        .temp::-webkit-scrollbar,
+        .warn::-webkit-scrollbar,
+        .person_info::-webkit-scrollbar {
+            /*滚动条整体样式*/
+            width: 4px;
+            /*高宽分别对应横竖滚动条的尺寸*/
+            height: 4px;
+            scrollbar-arrow-color: red;
+        }
+        
+        .temp::-webkit-scrollbar-thumb,
+        .warn::-webkit-scrollbar-thumb,
+        .person_info::-webkit-scrollbar-thumb {
+            /*滚动条里面小方块*/
+            border-radius: 5px;
+            -webkit-box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
+            background: rgba(0, 0, 0, 0.2);
+            scrollbar-arrow-color: red;
+        }
+        
+        .temp::-webkit-scrollbar-track,
+        .warn::-webkit-scrollbar-track,
+        .person_info::-webkit-scrollbar-track {
+            /*滚动条里面轨道*/
+            -webkit-box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
+            border-radius: 0;
+            background: rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+
+<body background="../images/background.jpg">
+    <header>
+        <div class="title">AI校园安全云平台</div>
+        <div class="head_detail">
+            <span class="addr">贵阳小学</span>
+            <img src="../images/time.png" />
+            <span class="time"></span>
+            <p>
+                <img src="../images/gotoilet.png" />
+                <img src="../images/gotoiletout.png" />
+            </p>
+        </div>
+    </header>
+    <div class="container">
+        <div class="con_left">
+            <ul class="temp">
+                <li>
+                    <a href=""><img src="../images/tree.jpg" /></a>
+                </li>
+                <li>
+                    <a href=""><img src="../images/tree.jpg" /></a>
+                </li>
+                <li>
+                    <a href=""><img src="../images/tree.jpg" /></a>
+                </li>
+                <li>
+                    <a href=""><img src="../images/tree.jpg" /></a>
+                </li>
+                <li>
+                    <a href=""><img src="../images/tree.jpg" /></a>
+                </li>
+                <li>
+                    <a href=""><img src="../images/tree.jpg" /></a>
+                </li>
+                <li>
+                    <a href=""><img src="../images/tree.jpg" /></a>
+                </li>
+                <li>
+                    <a href=""><img src="../images/tree.jpg" /></a>
+                </li>
+                <li>
+                    <a href=""><img src="../images/tree.jpg" /></a>
+                </li>
+                <li>
+                    <a href=""><img src="../images/tree.jpg" /></a>
+                </li>
+                <li>
+                    <a href=""><img src="../images/tree.jpg" /></a>
+                </li>
+                <li>
+                    <a href=""><img src="../images/tree.jpg" /></a>
+                </li>
+                <li>
+                    <a href=""><img src="../images/tree.jpg" /></a>
+                </li>
+                <li>
+                    <a href=""><img src="../images/tree.jpg" /></a>
+                </li>
+                <li>
+                    <a href=""><img src="../images/tree.jpg" /></a>
+                </li>
+                <li>
+                    <a href=""><img src="../images/tree.jpg" /></a>
+                </li>
+                <li>
+                    <a href=""><img src="../images/tree.jpg" /></a>
+                </li>
+                <li>
+                    <a href=""><img src="../images/tree.jpg" /></a>
+                </li>
+                <li>
+                    <a href=""><img src="../images/tree.jpg" /></a>
+                </li>
+                <li>
+                    <a href=""><img src="../images/tree.jpg" /></a>
+                </li>
+                <li>
+                    <a href=""><img src="../images/tree.jpg" /></a>
+                </li>
+                <li>
+                    <a href=""><img src="../images/tree.jpg" /></a>
+                </li>
+                <li>
+                    <a href=""><img src="../images/tree.jpg" /></a>
+                </li>
+                <li>
+                    <a href=""><img src="../images/tree.jpg" /></a>
+                </li>
+                <li>
+                    <a href=""><img src="../images/tree.jpg" /></a>
+                </li>
+            </ul>
+            <div class="end">
+                <div class="end_left">实时警告</div>
+                <div class="end_right">
+                    <span class="enent"><img src="../images/maked.png" alt="" />已处理</span>
+                    <span class="enent"><img src="../images/make.png" alt="" />待处理</span>
+                    <span class="enent"><img src="../images/unmake.png" alt="" />未处理</span>
+                </div>
+                <div class="event_info">
+                    <div class="event_info_left">
+                        <h3><img src="../images/maked.png" /></h3>
+                        <i>闯入事件</i>
+                        <img src="../images/time.png" />
+                        <b class="time">2019-06-04 12:10:12</b>
+                        <img src="../images/address.png" />
+                        <span>贵阳小学正大门</span>
+                    </div>
+                    <div class="event_info_right">
+                        <h3><img src="../images/maked.png" /></h3>
+                        <i>闯入事件</i>
+                        <img src="../images/time.png" />
+                        <b class="time">2019-06-04 12:10:12</b>
+                        <img src="../images/address.png" />
+                        <span>贵阳小学正大门</span>
+                    </div>
+                </div>
+                <div class="event_info">
+                    <div class="event_info_left">
+                        <h3><img src="../images/make.png" /></h3>
+                        <i>闯入事件</i>
+                        <img src="../images/time.png" />
+                        <b class="time">2019-06-04 12:10:12</b>
+                        <img src="../images/address.png" />
+                        <span>贵阳小学正大门</span>
+                    </div>
+                    <div class="event_info_right">
+                        <h3><img src="../images/make.png" /></h3>
+                        <i>闯入事件</i>
+                        <img src="../images/time.png" />
+                        <b class="time">2019-06-04 12:10:12</b>
+                        <img src="../images/address.png" />
+                        <span>贵阳小学正大门</span>
+                    </div>
+                </div>
+                <div class="event_info">
+                    <div class="event_info_left">
+                        <h3><img src="../images/unmake.png" /></h3>
+                        <i>闯入事件</i>
+                        <img src="../images/time.png" />
+                        <b class="time">2019-06-04 12:10:12</b>
+                        <img src="../images/address.png" />
+                        <span>贵阳小学正大门</span>
+                    </div>
+                    <div class="event_info_right">
+                        <h3><img src="../images/unmake.png" /></h3>
+                        <i>闯入事件</i>
+                        <img src="../images/time.png" />
+                        <b class="time">2019-06-04 12:10:12</b>
+                        <img src="../images/address.png" />
+                        <span>贵阳小学正大门</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="con_right">
+            <ul class="warn">
+                <li class="list"><img src="../images/event1.png" />
+                    <p>闯入事件</p><span>2次</span></li>
+                <li class="list"><img src="../images/event2.png" />
+                    <p>倒地事件</p><span>2次</span></li>
+                <li class="list"><img src="../images/event3.1.png" />
+                    <p>求救事件</p><span>2次</span></li>
+                <li class="list"><img src="../images/event4.png" />
+                    <p>攀爬事件</p><span>2次</span></li>
+                <li class="list"><img src="../images/event5.png" />
+                    <p>烟雾事件</p><span>2次</span></li>
+                <li class="list"><img src="../images/event6.png" />
+                    <p>打架事件</p><span>2次</span></li>
+                <li class="list"><img src="../images/event7.png" />
+                    <p>聚众事件</p><span>2次</span></li>
+                <li class="list"><img src="../images/event8.png" />
+                    <p>攀高事件</p><span>2次</span></li>
+                <li class="list"><img src="../images/event9.png" />
+                    <p>睡岗事件</p><span>2次</span></li>
+                <li class="list"><img src="../images/event10.png" />
+                    <p>离岗事件</p><span>2次</span></li>
+                <li class="list"><img src="../images/event11.png" />
+                    <p>离床事件</p><span>2次</span></li>
+                <li class="list"><img src="../images/event12.png" />
+                    <p>火焰事件</p><span>2次</span></li>
+            </ul>
+            <div class="charts">
+                <div id="container" style="width: 100%;height:100%;"></div>
+            </div>
+            <div class="person_info">
+                <ul class="person_box">
+                    <li>
+                        <div class="personal">
+                            <div class="headphoto">
+                                <img src="../images/headphoto.jpg" />
+                            </div>
+                        </div>
+                        <div>
+                            <img src="../images/head.png" />
+                            <span class="name">狗蛋</span>
+                            <img src="../images/man.png" />
+                            <img src="../images/glass.png" />
+                        </div>
+                        <div>
+                            <img src="../images/class.png" />六年级一班
+                        </div>
+                        <div><img src="../images/time.png" />2019.01.10 10:10:10</div>
+                        <div><img src="../images/address.png" />贵阳小学正大门</div>
+                    </li>
+                    <li>
+                        <div class="personal">
+                            <div class="headphoto">
+                                <img src="../images/headphoto.jpg" />
+                            </div>
+                        </div>
+                        <div>
+                            <img src="../images/head.png" />
+                            <span class="name">狗蛋</span>
+                            <img src="../images/man.png" />
+                            <img src="../images/glass.png" />
+                        </div>
+                        <div>
+                            <img src="../images/class.png" />六年级一班
+                        </div>
+                        <div><img src="../images/time.png" />2019.01.10 10:10:10</div>
+                        <div><img src="../images/address.png" />贵阳小学正大门</div>
+                    </li>
+                    <li>
+                        <div class="personal">
+                            <div class="headphoto">
+                                <img src="../images/headphoto.jpg" />
+                            </div>
+                        </div>
+                        <div>
+                            <img src="../images/head.png" />
+                            <span class="name">狗蛋</span>
+                            <img src="../images/man.png" />
+                            <img src="../images/glass.png" />
+                        </div>
+                        <div>
+                            <img src="../images/class.png" />六年级一班
+                        </div>
+                        <div><img src="../images/time.png" />2019.01.10 10:10:10</div>
+                        <div><img src="../images/address.png" />贵阳小学正大门</div>
+                    </li>
+                    <li>
+                        <div class="personal">
+                            <div class="headphoto">
+                                <img src="../images/headphoto.jpg" />
+                            </div>
+                        </div>
+                        <div>
+                            <img src="../images/head.png" />
+                            <span class="name">狗蛋</span>
+                            <img src="../images/man.png" />
+                            <img src="../images/glass.png" />
+                        </div>
+                        <div>
+                            <img src="../images/class.png" />六年级一班
+                        </div>
+                        <div><img src="../images/time.png" />2019.01.10 10:10:10</div>
+                        <div><img src="../images/address.png" />贵阳小学正大门</div>
+                    </li>
+                </ul>
+
+            </div>
+        </div>
+    </div>
+</body>
+<script type="text/javascript">
+    window.onload = function() {
+        var date = new Date();
+        var oTime = document.getElementsByClassName('time')[0];
+
+        function formatTime(date) {  
+            if (date) {    
+                var date = new Date(date);  
+            } else {    
+                var date = new Date();  
+            }    
+            Y = date.getFullYear(),     m = date.getMonth() + 1,     d = date.getDate(),     H = date.getHours(),     i = date.getMinutes(),     s = date.getSeconds();  
+            if (m < 10) {    
+                m = '0' + m;  
+            }  
+            if (d < 10) {    
+                d = '0' + d;  
+            }  
+            if (H < 10) {    
+                H = '0' + H;  
+            }  
+            if (i < 10) {    
+                i = '0' + i;  
+            }  
+            if (s < 10) {    
+                s = '0' + s;  
+            }  
+            var t = Y + '-' + m + '-' + d + ' ' + H + ':' + i + ':' + s;  
+            return t;
+        }
+
+        function formatdate(date) {  
+            if (date) {    
+                var date = new Date(date);  
+            } else {    
+                var date = new Date();  
+            }    
+            Y = date.getFullYear(),     m = date.getMonth() + 1,     d = date.getDate(),     H = date.getHours(),     i = date.getMinutes(),     s = date.getSeconds();  
+            if (m < 10) {    
+                m = '0' + m;  
+            }  
+            if (d < 10) {    
+                d = '0' + d;  
+            }
+            //			   if(H<10){
+            //			       H = '0'+H;
+            //			   }
+            //			   if(i<10){
+            //			       i = '0'+i;
+            //			   }
+            //			   if(s<10){
+            //			       s = '0'+s;
+            //			   }
+              
+            var t = Y + '.' + m + '.' + d;  
+            return t;
+        }
+
+
+        var datatime = formatTime(date);
+        var daytime = formatdate(date);
+
+        //			var daytime=date.toLocaleDateString();
+        oTime.innerHTML = datatime;
+
+
+        function adddate(date, num) {  
+            if (date) {    
+                var date = new Date(date);  
+            } else {    
+                var date = new Date();  
+            }    
+            Y = date.getFullYear(),     m = date.getMonth() + 1,     d = date.getDate() + num,     H = date.getHours(),     i = date.getMinutes(),     s = date.getSeconds();  
+            if (m < 10) {    
+                m = '0' + m;  
+            }  
+            if (d < 10) {    
+                d = '0' + d;  
+            }
+            //			   if(H<10){
+            //			       H = '0'+H;
+            //			   }
+            //			   if(i<10){
+            //			       i = '0'+i;
+            //			   }
+            //			   if(s<10){
+            //			       s = '0'+s;
+            //			   }
+              
+            var t = Y + '.' + m + '.' + d;  
+            return t;
+        }
+
+        //			 var nextdate=adddate(date,1);
+        //charts
+        var chart = Highcharts.chart('container', {
+            chart: {
+                type: 'spline',
+                backgroundColor: 'transparent'
+            },
+            title: {
+                text: '事件时间分布图',
+                align: 'left',
+                style: {
+                    color: 'white'
+                }
+            },
+
+            credits: {
+                enabled: false
+            },
+            //	subtitle: {
+            //		text: '数据来源: WorldClimate.com'
+            //	},
+            xAxis: {
+                categories: [daytime, adddate(date, 1), adddate(date, 2), adddate(date, 3), adddate(date, 4), adddate(date, 5), adddate(date, 6)],
+                gridLineColor: '#197F07', //纵向网格线颜色
+                gridLineWidth: 1, //纵向网格线宽度
+                //		gridLineDashStyle:'longdash'
+            },
+            yAxis: {
+                title: {
+                    text: ''
+                },
+                labels: {
+                    formatter: function() {
+                        return this.value;
+                    }
+                },
+                gridLineColor: '#197F07', //横向网格线颜色
+                //		gridLineDashStyle: 'longdash',//横向网格线样式
+                gridLineWidth: 1 //横向网格线宽度
+            },
+            tooltip: {
+                crosshairs: true,
+                shared: true
+            },
+            plotOptions: {
+                spline: {
+                    marker: {
+                        radius: 4,
+                        lineColor: '#666666',
+                        lineWidth: 1
+                    }
+                }
+            },
+            series: [{
+                name: '倒地',
+                color: '#34C21B',
+                marker: {
+                    symbol: 'circle'
+                },
+                data: [7.0, 6.9, 9.5, 14.5, 18.2, 21.5, 25.2]
+            }, {
+                name: '求救',
+                color: '#6C19FC',
+                marker: {
+                    symbol: 'circle'
+                },
+                data: [4.2, 5.7, 8.5, 11.9, 15.2, 17.0, 16.6]
+            }, {
+                name: '打架',
+                color: 'green',
+                marker: {
+                    symbol: 'circle'
+                },
+                data: [3.0, 4.9, 10.5, 12.5, 9.2, 18.5, 15.2]
+            }, {
+                name: '聚众',
+                color: '#31C7F4',
+                marker: {
+                    symbol: 'circle'
+                },
+                data: [2.0, 10.9, 11.5, 15.5, 30.2, 22.5, 20.2]
+            }, {
+                name: '闯入',
+                color: '#D72C53',
+                marker: {
+                    symbol: 'circle'
+                },
+                data: [10.0, 8.9, 12.5, 16.5, 20.2, 18.5, 55.2]
+            }, {
+                name: '攀爬',
+                color: '#D7682C',
+                marker: {
+                    symbol: 'circle'
+                },
+                data: [15.0, 18.9, 20.5, 25.5, 30.2, 38.5, 42.2]
+            }]
+        });
+    }
+</script>
+
+</html>

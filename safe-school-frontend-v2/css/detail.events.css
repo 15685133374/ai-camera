@@ -1,0 +1,91 @@
+.detail-event-div {
+    box-shadow: 0 0 15px #4274cb inset;
+    margin: 5px;
+    height: 100%;
+    padding: 10px;
+}
+
+.event-class {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+}
+
+.event-class>li {
+    width: 100px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+}
+
+.li-selected {
+    background: #3767cc;
+}
+
+.detial-input {
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+.detial-input>div {
+    width: 250px;
+    margin-right: 30px;
+    display: flex;
+}
+
+.detial-input>div>input {
+    /* width: 100px; */
+    border: 1px solid #1E9FFF;
+    background: transparent;
+    color: white;
+    border-radius: 0;
+}
+
+.detial-icon {
+    border-top: 1px solid #1E9FFF;
+    border-right: 1px solid #1E9FFF;
+    border-bottom: 1px solid #1E9FFF;
+    font-size: 30px;
+    color: #1E9FFF;
+}
+
+tr {
+    background-color: transparent !important;
+}
+
+tr:hover {
+    background-color: #1E9FFF !important;
+}
+
+.layui-table {
+    color: white;
+}
+
+.layui-table-header {
+    background-color: transparent;
+    box-shadow: 0 0 15px #4274cb inset;
+    border: none;
+}
+
+thead {
+    height: 50px;
+}
+
+thead>tr:hover {
+    background-color: transparent !important;
+}
+
+.layui-table-view {
+    border: none;
+}
+
+.layui-table-page {
+    margin-top: 20px;
+    border: none;
+}
+
+#layui-table-page1 {
+    text-align: center;
+}

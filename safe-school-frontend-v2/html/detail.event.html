@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!--*******************引入样式************************-->
+    <!-- <link href="../../lib/bootstrap/css/bootstrap.min.css" type="text/css" rel="stylesheet"> -->
+    <!-- <link href="../../lib/bootstrap/css/bootstrap-theme.css" type="text/css" rel="stylesheet"> -->
+    <!-- <link href="../../lib/bootstrap/css/bootstrap.css" type="text/css" rel="stylesheet"> -->
+    <link rel="stylesheet" href="../lib/layui/css/layui.css" type="text/css">
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/detail.events.css">
+</head>
+
+<body class="layui-layout-body">
+    <!-- 主体 -->
+    <div class="layui-fluid" style="height:100%">
+        <!-- 返回按钮 -->
+        <div class="layui-row">
+            <div class="return-btn">
+                <span>返回</span>
+            </div>
+        </div>
+        <!--  -->
+        <div class="layui-row" style="height: 100%">
+            <div class="layui-col-md6" style="height: 100%">
+                <div class="layui-row detail-event-div">
+                    <!-- 事件类别 -->
+                    <div class="layui-row">
+                        <ul class="event-class">
+                            <li>闯入事件</li>
+                            <li>闯入事件</li>
+                            <li>闯入事件</li>
+                            <li>闯入事件</li>
+                            <li>闯入事件</li>
+                            <li>闯入事件</li>
+                            <li>闯入事件</li>
+                            <li>闯入事件</li>
+                            <li>闯入事件</li>
+                            <li>闯入事件</li>
+                            <li>闯入事件</li>
+                            <li>闯入事件</li>
+                        </ul>
+                    </div>
+                    <!-- 筛选 -->
+                    <div class="layui-row detial-input">
+                        <!-- 时间筛选框 -->
+                        <!-- 注意：这一层元素并不是必须的 -->
+                        <div>
+                            <input type="text" name="title" required placeholder="请输入设备名称" autocomplete="off" class="layui-input" width="100px">
+                            <i class="layui-icon layui-icon-search detial-icon"></i>
+                        </div>
+                        <!-- 摄像头筛选框 -->
+                        <div>
+                            <input type="text" class="layui-input" id="detail-date" width="100px">
+                            <i class="layui-icon layui-icon-date detial-icon"></i>
+                        </div>
+
+                    </div>
+                    <!-- 事件列表 -->
+                    <div class="layui-row" style="margin-top: 20px">
+                        <!-- 列表 -->
+                        <table id="demo" lay-filter="test"></table>
+                    </div>
+                </div>
+
+            </div>
+            <div class="layui-col-md6 " style="height: 100%">
+                <div class="detail-event-div">
+                    视频查看。
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!--*******************引入JS************************-->
+    <script src="../node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="../lib/layui/layui.js"></script>
+    <!--*******************引入fun-JS************************-->
+    <script src="../js/detail.events.js"></script>
+</body>
+
+</html>
