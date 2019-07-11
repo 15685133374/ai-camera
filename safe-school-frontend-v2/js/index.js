@@ -24,6 +24,9 @@ function getCookie(cname)
 // var uid=getCookie("uid");
 // console.log('TCL: uid', uid)
 
+//time
+realTime.main();
+
 // 获取用户设备表中的数据
 var socket = io.connect();
 cameras.main();
