@@ -1,8 +1,9 @@
 var cameras = (function() {
-    var container = $('#livestream');
+    var container = $('.temp');
     var template = {
         canvas: ['<canvas width="320" >', '</canvas>'].join(""),
-        img: ['<img width="320px" src="./lib/img/15687_main.jpg">'].join(""),
+        li_1:'<li></li>',
+        img: ['<img width="320px" src="../images/15687_main.jpg">'].join(""),
         result: ['<div><li></li></div>'].join(""),
         li_str: ['<li user_data="0">',
             '    <span></span>',
@@ -19,16 +20,12 @@ var cameras = (function() {
 
     function getData() {
         var uid = getCookie("uid");
-        var domain = document.domain;
-        host = 'http://' + domain + ':5300'
-        host = 'http://' + '192.168.1.210' + ':5300'
-            // host = 'http://' + domain;
-            // api = '/api/cameras';
-        api = '/device/list';
+        var host=window.location.host;
+        host = 'http://' + host
+        api = '/api/v1/device/list';
         axios
             .get(host + api)
             .then(function(response) {
-                // console.log(response.data);
                 updateContent(response.data.result);
             })
             .catch(function(error) {
@@ -37,9 +34,8 @@ var cameras = (function() {
     }
 
     function updateContent(data) {
-        console.log(data);
-        for (var i = 0; i < data.length; i++) {
-            var item = data[i];
+        for(var key in data){
+            var item = key;
             // var id = "camera" + item;
             var img = $(template.img);
             img.attr("id", item)
@@ -67,7 +63,7 @@ var cameras = (function() {
                     img.attr('src', imageUrl);
                 })
             })
-            container.append(img)
+            container.append($(template.li_1).append(img))
         }
         // 直播弹窗关闭
         $('#exampleModal').on('hide.bs.modal', function(e) {
@@ -82,53 +78,19 @@ var cameras = (function() {
         })
     }
 
-    function call_live(did) {
-        var uid = getCookie("uid");
-        var domain = document.domain;
-        // host = 'http://127.0.0.1:5000';
-        host = 'http://' + domain + ':5300'
-        api = '/api/onelive';
-        axios
-            .post(host + api + "/" + uid, { did: did })
-            .then(function(response) {
-                // console.log(response.data);
-                // updateContent(response.data.result);
-
-            })
-            .catch(function(error) {
-                console.log(error);
-            });
-    }
-
-    function setOneFrame() {
-        console.log('设置frame界面')
-        var id = "onecamera";
-        var img = $(template.img);
-        img.attr("id", id)
-        container.append(img)
-    }
-
     function main() {
-        // console.log("获取摄像头");
+        console.log("获取摄像头");
         getData();
         // setOneFrame();
 
-        var playlistHeight = $(".playlist").height();
-        var w = $('.playlist').width();
-        $('.resultlist2').css('width', w);
-        $(".box").css("max-height", playlistHeight);
+        // var playlistHeight = $(".playlist").height();
+        // var w = $('.playlist').width();
+        // $('.resultlist2').css('width', w);
+        // $(".box").css("max-height", playlistHeight);
 
 
 
-        socket.on('connect', function() {
-            console.log('完成链接建立')
-            socket.emit('connect_event', { data: 'connected!' });
-        })
-        socket.on('server_response', function(msg) {
-            console.log('服务器发来 #' + ': ' + msg.data)
-            socket.emit('startvideo', { data: 'startvideo' });
-            socket.emit('ai_result', { data: '0' });
-        });
+        
         socket.on('frame', function(msg) {
             value = msg.did
                 // console.log(value)
@@ -137,51 +99,51 @@ var cameras = (function() {
             // $('#onecamera').attr('src', 'data:image/jpg;base64,' + msg.data);
             // $("#cam").attr('src', 'data:image/jpg;base64,' +  msg.data);
         });
-        socket.on('result', function(msg) {
-            console.log(msg.uid)
-                // uid,face,time,did
-                // log_id = msg.id
-                // // 将数据显示到界面上。
-                // var eq1 = JSON.stringify(log) === JSON.stringify(msg)
-                // if (!eq1) {
-            lis = $('.resultlist2').find('li')
-            flag = 1
-            lis.each(function() {
-                current = $(this)
-                if (current.attr('user_data') == msg.uid) {
-                    current.find(".re_name").text(msg.name);
-                    var result_time = msg.time;
-                    var a = result_time.split(" ")
-                    var result_time_str = a[1] + "<br>" + a[0]
-                    current.find(".time_t").html(result_time_str);
-                    current.find("img").attr('src', 'data:image/jpg;base64,' + msg.face);
-                    // console.log($('.resultlist2').find('user_data'))
-                    flag = 0
-                }
-            })
-            if (flag) {
-                var li = $(template.li_str);
-                li.attr('user_data', msg.uid)
-                li.find(".re_name").text(msg.name);
-                var result_time = msg.time;
-                var a = result_time.split(" ")
-                var result_time_str = a[1] + "<br>" + a[0]
-                li.find(".time_t").html(result_time_str);
-                // li.find(".location").text(msg.device)
-                li.find("img").attr('src', 'data:image/jpg;base64,' + msg.face);
-                $('.resultlist2').find("ul").prepend(li);
-            }
+        // socket.on('result', function(msg) {
+        //     console.log(msg)
+        //         // uid,face,time,did
+        //         // log_id = msg.id
+        //         // // 将数据显示到界面上。
+        //         // var eq1 = JSON.stringify(log) === JSON.stringify(msg)
+        //         // if (!eq1) {
+        //     lis = $('.resultlist2').find('li')
+        //     flag = 1
+        //     lis.each(function() {
+        //         current = $(this)
+        //         if (current.attr('user_data') == msg.uid) {
+        //             current.find(".re_name").text(msg.name);
+        //             var result_time = msg.time;
+        //             var a = result_time.split(" ")
+        //             var result_time_str = a[1] + "<br>" + a[0]
+        //             current.find(".time_t").html(result_time_str);
+        //             current.find("img").attr('src', 'data:image/jpg;base64,' + msg.face);
+        //             // console.log($('.resultlist2').find('user_data'))
+        //             flag = 0
+        //         }
+        //     })
+        //     if (flag) {
+        //         var li = $(template.li_str);
+        //         li.attr('user_data', msg.uid)
+        //         li.find(".re_name").text(msg.name);
+        //         var result_time = msg.time;
+        //         var a = result_time.split(" ")
+        //         var result_time_str = a[1] + "<br>" + a[0]
+        //         li.find(".time_t").html(result_time_str);
+        //         // li.find(".location").text(msg.device)
+        //         li.find("img").attr('src', 'data:image/jpg;base64,' + msg.face);
+        //         $('.resultlist2').find("ul").prepend(li);
+        //     }
 
-            // 这里要控制元素的个数。
-            // log=msg
-            // }
-        });
+        //     // 这里要控制元素的个数。
+        //     // log=msg
+        //     // }
+        // });
 
         // //一条实时视频流
-        socket.on('onelive', function(msg) {
-            value = msg.did
-            $('[id$="' + value + '"]').attr('src', 'data:image/jpg;base64,' + msg.data);
-        })
+        // socket.on('onelive', function(msg) {
+        //     value = msg.did
+        //     $('[id$="' + value + '"]').attr('src', 'data:image/jpg;base64,' + msg.data);
+        // })
     }
     return {
         main: main

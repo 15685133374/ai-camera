@@ -16,7 +16,7 @@
             position: relative;
         }
         
-        .container {
+        .container_big {
             background: #000519;
             box-sizing: border-box;
            position: absolute;
@@ -119,6 +119,8 @@
         height: 40px;
         border-bottom: 1px solid #31C7F4;
         line-height: 38px;
+        display: flex;
+        justify-content: space-between;
     }
     
     .event_info_left {
@@ -129,10 +131,10 @@
         float: right;
     }
     
-    .event_info .time {
+    /* .event_info .time {
         font-size: 12px;
         font-weight: normal;
-    }
+    } */
     
     .event_info i {
         font-style: normal;
@@ -181,6 +183,7 @@
     .list p {
         line-height: 40px;
         white-space: nowrap;
+        margin-bottom: 0;
     }
     
     .list span {
