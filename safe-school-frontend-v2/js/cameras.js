@@ -52,22 +52,22 @@ var cameras = (function() {
                     $('#qidong').hide();
                     var value = msg.did;
                     // 显示base64图片
-                    // $('[id$="modal-img-live-'+value+'"]').attr('src', 'data:image/jpg;base64,' + msg.data);
+                    $('#modal-img-live-'+value).attr('src', 'data:image/jpg;base64,' + msg.data);
                     // 直接读取二进制数据.
                     // console.log(msg.data)
-                    var arrayBufferView = new Uint8Array(this.response);
-                    var blob = new Blob([arrayBufferView], { type: "image/jpeg" });
-                    var urlCreator = window.URL || window.webkitURL;
-                    var imageUrl = urlCreator.createObjectURL(blob);
-                    var img = $('[id$="modal-img-live-' + value + '"]');
-                    img.attr('src', imageUrl);
+                    // var arrayBufferView = new Uint8Array(this.response);
+                    // var blob = new Blob([arrayBufferView], { type: "image/jpeg" });
+                    // var urlCreator = window.URL || window.webkitURL;
+                    // var imageUrl = urlCreator.createObjectURL(blob);
+                    // var img = $('[id$="modal-img-live-' + value + '"]');
+                    // img.attr('src', imageUrl);
                 })
             })
             container.append($(template.li_1).append(img))
         }
         // 直播弹窗关闭
         $('#exampleModal').on('hide.bs.modal', function(e) {
-            console.log('modal hide')
+            // console.log('modal hide')
             var img = $('#exampleModal').find('img')
             img.attr('src', '')
             var s_id = img.attr('id')
@@ -93,9 +93,10 @@ var cameras = (function() {
         
         socket.on('frame', function(msg) {
             value = msg.did
-                // console.log(value)
-                // console.log($('[id$="'+value+'"]'))
-            $('[id$="' + value + '"]').attr('src', 'data:image/jpg;base64,' + msg.data);
+            // console.log(value)
+            // console.log($('#' + value))
+            // $('[id$="' + value + '"]').attr('src', 'data:image/jpg;base64,' + msg.data);
+            $('#' + value).attr('src', 'data:image/jpg;base64,' + msg.data);
             // $('#onecamera').attr('src', 'data:image/jpg;base64,' + msg.data);
             // $("#cam").attr('src', 'data:image/jpg;base64,' +  msg.data);
         });
