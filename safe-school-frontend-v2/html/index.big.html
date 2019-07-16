@@ -14,7 +14,7 @@
     <header>
         <div class="title">AI校园安全云平台</div>
         <div class="head_detail">
-            <span class="addr">贵阳小学</span>
+            <span class="addr"></span>
             <img src="../images/time.png" />
             <span class="current_time"></span>
         </div>
@@ -24,7 +24,7 @@
             <ul class="temp">
             </ul>
             <div class="end">
-                <div class="end_left">实时警告</div>
+                <div class="end_left">实时告警</div>
                 <!-- <div class="end_right">
                     <span class="enent"><img src="../images/maked.png" alt="" />已处理</span>
                     <span class="enent"><img src="../images/make.png" alt="" />待处理</span>
@@ -77,29 +77,6 @@
             </div>
             <div class="person_info">
                 <ul class="person_box">
-                    <li>
-                        <div class="personal">
-                            <!-- <div class="imgborder">
-                                <div class="headphoto">
-                                    
-                                </div>
-                            </div> -->
-                            <img class="face_info_person_img" src="../images/headphoto.jpg" />
-                        </div>
-                        <div>
-                            <img src="../images/head.png" />
-                            <span class="name face_info_person_name">狗蛋</span>
-                            <!-- <img src="../images/man.png" /> -->
-                            <!-- <img src="../images/glass.png" /> -->
-                        </div>
-                        <div>
-                            <img src="../images/class.png" />
-                            <span class='face_info_personclass'>六年级一班</span>
-                        </div>
-                        <div><img src="../images/time.png" />
-                        <span class='face_recog_time'>2019.01.10 10:10:10</span></div>
-                        <div><img src="../images/address.png" /><span class="face_recog_location">贵阳小学正大门</span></div>
-                    </li>
                 </ul>
 
             </div>
@@ -121,10 +98,21 @@
                     <p id='qidong'>摄像头直播启动中...</p>
                     <img width="100%" />
                 </div>
-                <!-- <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">关闭</button>
-            <button type="button" class="btn btn-primary">Save changes</button>
-            </div> -->
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="exampleModa2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">event occer</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true" style="color:black">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                </div>
             </div>
         </div>
     </div>
@@ -139,6 +127,7 @@
     <!-- <script src="../lib/socket.io.js"></script> -->
     <!--*******************引入fun-JS************************-->
     <script src="../js/time.update.js"></script>
+    <script src="../js/live.modal.js"></script>
     <script src="../js/cameras.js" type="text/javascript"></script>
     <script src="../js/realtime_alarm.list.js"></script>
     <script src="../js/charts.statistics.js" type="text/javascript"></script>

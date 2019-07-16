@@ -202,7 +202,7 @@ border-radius: 4px;
 }
 
 .personal{
-    background: url(../images/photo_box.png);
+    /* background: url(../images/photo_box.png); */
     width: 80px;
     height: 80px;
     display: flex;
@@ -245,6 +245,7 @@ list-style: none;
 display: flex;
 flex-wrap: wrap;
 /* justify-content: space-between; */
+margin-bottom: 0;
 }
 
 .person_box img{
@@ -353,4 +354,31 @@ color: black;
 }
 #qidong{
 color: black;
+}
+/* .modal-dialog{
+    max-width: 800px;
+} */
+.modal-body{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.face_info_span{
+    margin-left: 5px;
+    font-size: 1.1rem;
+}
+.face_info_item{
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+}
+.face_info_item>img{
+    height: 20px;
+}
+
+.event_img{
+    width:auto;
+    height: auto;
+    max-width: 100%;
+    max-height: 100%;
 }

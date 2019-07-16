@@ -42,7 +42,7 @@ socket.on('server_response', function(msg) {
 });
 
 socket.on('result', function(msg) {
-  console.log(msg)
+  // console.log(msg)
   realtime_alarm_list.main(msg);
   event_updating.main(msg);
   
