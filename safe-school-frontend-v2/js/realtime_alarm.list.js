@@ -50,7 +50,8 @@ var realtime_alarm_list = (function() {
             event_div.find('.event_time').text(e.time)
 
             var img=event_div.find("img")
-            var frame=ability_result.result.frame
+            img.attr('id', 'modal-event-live-' + did)
+            // var frame=ability_result.result.frame
             img.attr('src', 'data:image/jpg;base64,' +frame);
             modal_body.append(event_div)
         });
