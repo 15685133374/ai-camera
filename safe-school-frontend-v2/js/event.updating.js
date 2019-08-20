@@ -26,7 +26,7 @@ var event_updating = (function () {
                 '<span class="face_recog_location "></span>',
             '</div>',
             '<a href="html/detail.person.html">',
-           // '<button type="button" class="text-center detail">详情</button></a>',
+            '<button type="button" class="text-center detail">详情</button></a>',
             '</li >',
         ].join(""),
     };
@@ -34,7 +34,7 @@ var event_updating = (function () {
 
 function updateContent(data) {
     var event_location = data.location;
-    // console.log(data)
+    console.log(data)
     data.ai_result.forEach(e => {
         // console.log(e)
         // console.log(e.ai_ability)

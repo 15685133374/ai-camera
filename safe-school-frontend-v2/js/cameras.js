@@ -26,18 +26,30 @@ var cameras = (function () {
         axios
             .get(host + api)
             .then(function (response) {
+                // response.data.result = '';
                 updateContent(response.data.result);
                 let ipArray = new Array();
                 let locationArray = new Array();
                 let ipobj;
                 let locobj;
                 for(let x=0;x<response.data.result.length;x++){
-                    $('.camera_title').eq(x).html(response.data.result[x].ip+'<br />'+response.data.result[x].location);
+                    $('.camera_title').eq(x).html(response.data.result[x].location);
                     ipArray.ipobj=response.data.result[x].ip;
                     locationArray.locobj=response.data.result[x].location;
                     ipArray.push( ipArray.ipobj);
                     locationArray.push(response.data.result[x].location);
                 }
+                console.log('摄像头数量：',response.data.result.length);
+                let res_length = response.data.result.length;
+                if(res_length<16){
+                    let num=16-res_length;
+                    $('.change ').css('display','none');
+                    for(let i=0;i<num;i++){
+                        $('.temp').append('<li><img src="../images/bdlog.png"></li>')
+                    }
+
+                }
+
                 sessionStorage.setItem('response_res',JSON.stringify(response.data.result))
                
             })
@@ -47,9 +59,9 @@ var cameras = (function () {
     }
 
     function updateContent(data) {
-        console.log(data)
         for (var key in data) {
             var item = data[key].did;
+            console.log()
             // var id = "camera" + item;
             var img = $(template.img);
             img.attr("id", item);

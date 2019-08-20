@@ -68,7 +68,7 @@ layui.use(['table', 'laydate'], function () {
             elem: '#demo',
             skin: 'nob', //行边框风格
             height: 600,
-            limit: 10,
+            limit: 30,
             // url: host + list_name_api,//'http://127.0.0.1:5000/api/v1/waring/list',//数据接口
             data: data_content,
             loading: true,
@@ -121,6 +121,9 @@ layui.use(['table', 'laydate'], function () {
         var host = window.location.host;
         host = 'http://' + host;
         let list_name_api = '/api/v1/waring/list/name';
+        let layer_index = layer.load(1, {
+            shade: [0.1,'#fff'] //0.1透明度的白色背景
+            });
         $.ajax({
             url: host + list_name_api,
             type: 'get',
@@ -128,10 +131,22 @@ layui.use(['table', 'laydate'], function () {
             data: {"ai_ability": event_name},
             success: function (res) {
                 data_content = res.data;
-                // console.log('data_content',data_content);
+                // console.log('获取的数据：',data_content);
+                //加载层
+
+                // var layer_index = layer.load(0, {shade: false}); //0代表加载的风格，支持0-2
+                //loading层
+
                 if (data_content === 'Success！') {
                     data_content = [{"ai_ability": "暂无数据……！"}];
                 }
+               
+              
+            },
+            complete: function(){
+                layer.close(layer_index);
+                console.log('请求完成');
+                display_event_list();
             }
         })
     }
@@ -164,9 +179,7 @@ layui.use(['table', 'laydate'], function () {
             btn_select.eq(i).addClass('active_btn');
 
             get_data();  //调用获取数据函数
-            setTimeout(function () {
-                display_event_list(); //调用显示数据函数
-            },2000)
+            
         }
     }
 
@@ -178,13 +191,11 @@ layui.use(['table', 'laydate'], function () {
         // event_name = btn_select.eq(i).text();
         if (ai_cn_ability_dict[event]) {
             event_name = ai_cn_ability_dict[event];
-            console.log("event_name", event_name)
+            // console.log("event_name", event_name)
         }
 
         get_data();     //调用获取数据函数
-        setTimeout(function () {
-            display_event_list();      //调用显示数据函数
-        }, 2000)
+        
     });
 
 });
@@ -194,6 +205,7 @@ $('.close2').click(function () {
     $(this).hide();
     $('.current_video_title').empty();
 })
+
 
 
 

@@ -97,3 +97,5 @@ $('.list').on('click','p',function () {
   window.location.href='/event';
   // alert('000');
 })
+
+
