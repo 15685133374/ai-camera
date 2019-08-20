@@ -16,13 +16,177 @@ body
     background-size:100% 100%;
     background-position: 50%;
     transform-origin: left top;
-    overflow:hidden;
+    /* overflow:hidden; */
     transition:all 0.5s;
+	position: relative;
+	overflow: hidden;
 }
 
+/* #firstMenuItem{
+	max-height: 500px;
+	overflow-y: auto;
+} */
+.swap{
+		width:136px;
+		height:33px;
+		background:rgba(14,45,101,1);
+		/* border:2px solid rgba(15, 39, 88, 0.69); */
+		border-radius:17px;
+		margin-left: 6.25rem;
+	}
+	.temp {
+    display: block;
+    width: 66px;
+    height: 31px;
+    line-height: 31px;
+    background: linear-gradient(186deg,rgba(31,145,234,1),rgba(15,66,121,1));
+    border: 1px solid rgba(31, 145, 234, 1);
+    box-shadow: -1px 3px 5px 0px rgba(255,255,255,0.29), 0px 3px 1px 0px rgba(94,158,212,0.22);
+    border-radius: 17px;
+    text-align: center;
+    font-size: 1rem;
+	cursor: pointer;
+	cursor: -ms-pointer;
+    float: right;
+}
+	.height_max{
+		height: 100%;
+	}
+	.set{
+		background: url(../images/gear.png) no-repeat left center;
+		padding: 0 2.25rem;
+		font-size: 1rem;
+	}
+	
+	*{ margin: 0; padding: 0; }
+	img{border:0;}
+	ul,li{list-style-type:none;}
+	a {color:#00007F;text-decoration:none;}
+	a:hover {color:#bd0a01;text-decoration:underline;}
+	.treebox{ margin: 0 auto;
+		background-color:#1a6cb9;
+		
+	  }
+	.menu{ overflow: hidden; border-width: 0 1px 1px ; }
+	/*第一层*/
+	.menu li.level1>a,.menu li.level11>a{ 
+		display:block;
+		height: 45px;
+		line-height: 45px;
+		color: #fff;
+		padding-left: 50px;
+		border-bottom: 1px solid #000; 
+		font-size: 16px;
+		position: relative;
+		transition:all .5s ease 0s;
+	 }
+	 .menu li.level1 a:hover,.menu li.level11 a:hover{ text-decoration: none;background-color:#326ea5;   }
+	 .menu li.level1 a.current,.menu li.level11 a.current{ background: #0f4679;text-decoration: none; }
+	
+	/*============修饰图标*/
+	/* .ico{ width: 20px; height: 20px; display:block;   position: absolute; left: 20px; top: 10px; background-repeat: no-repeat; background-image: url(../images/ico1.png); } */
+	
+	 /*============小箭头*/
+	 .level1 i, .level11 i{ width: 20px; height: 10px; background-image:url(../images/arrow.png); background-repeat: no-repeat; display: block; position: absolute; right: 20px; top: 20px; }
+	.level1 i.down{ background-position: 0 -10px; }
+	 .ico1{ background-position: 0 0; }
+	 .ico2{ background-position: 0 -20px; }
+	 .ico3{ background-position: 0 -40px; }
+	 .ico4{ background-position: 0 -60px; }
+	         .ico5{ background-position: 0 -80px; }
+	
+	 /*第二层*/
+	 .menu li ul{ overflow: hidden; }
+	 .menu li ul.level2, .menu li ul.level12{ display: none;background: #0f4679;  }
+	 .menu li ul.level2 li a,.menu li ul.level12 li a{
+	 	display: inline-block;
+		height: 45px;
+		line-height: 45px;
+		color: #fff;
+		text-indent: 60px;
+		font-size: 14px;
+	    transition:all 1s ease 0s;
+		width: 100%;
+	 }
+	 
+	 #firstMenuItem,.level2{
+		 max-height: 500px;
+	 }
+	 .menu li ul.level2 li input,.menu li ul.level12 li input{
+		 background: transparent;
+		 border: none;
+		 outline: none;
+		 width: 100px;
+	 }
+	 
+	 .active{
+		 background: #337ab7;
+	 }
+	 
+	 .glyphicon-pencil{
+		 cursor: pointer;
+		 display: inline;
+	 }
+	 
+	 .glyphicon-pencil:before {
+		content: "\270f";
+		float: right;
+		margin-right: 30px;
+		line-height: 45px;
+		text-indent: 0;
+		width: 20px;
+	}
+	 
+	.search{
+			margin: 20px auto 0;
+		    border-radius: 20px;
+			background: transparent;
+			border-color: #306EB7;
+			box-sizing: border-box;
+			padding: 0.3125rem 1.5rem 0.3125rem 0.625rem;
+			font-size: 16px;
+			background-image: url(../images/Magnifier.png);
+			background-repeat: no-repeat;
+			background-position: right center; 
+			outline: none;
+			width: 100%;
+	}
+	.level2 li a,.level12 li a{
+		background-image: url(../images/Camera1.png);
+		background-repeat: no-repeat;
+		background-position: 0.625rem center;
+	}
+	header{
+		position: absolute;
+		top: 0;
+		width: 100%;
+		height: 68px;
+		text-align: center;
+		background:rgba(99,182,240,1);
+		opacity:0.6;
+	}
+	header h1{
+		font-size: 1.875rem;
+		font-weight: bold;
+		margin: 0;
+		line-height: 68px;
+		color: white;
+		position: absolute;
+	}
+	.height_max_box{
+		position: absolute;
+		top: 68px;
+		bottom: 0;
+		width: 100%;
+	}
+	.bg_left{
+		background: #040F35;
+		position: relative;
+	}
+
 .containers{
-    width: 80%;
-    height: 70%;
+ /*   width: 80%; */
+    height: 90%;
     position: relative;
     top: -5%;
 }
@@ -68,7 +232,7 @@ body
 .form-control1[disabled],
 .form-control1[readonly],
 fieldset[disabled] .form-control {
-    background-color: #eee;
+    /* background-color: #eee; */
     opacity: 1;
 }
 .form-control1[disabled],
@@ -77,8 +241,8 @@ fieldset[disabled] .form-control {
 }
 .button_2{
     position: absolute;
-    top: 2%;
-    left: 100%;
+    top: 1.25rem;
+    right: 5rem;
     width: 15%;
     height: 8%;
     font-size: 1.5rem;
@@ -104,11 +268,12 @@ fieldset[disabled] .form-control {
 }
 .position{
     margin-top: 50px;
-    margin-left: 50px;
+    /* margin-left: 50px; */
     margin-bottom: 20px;
     position: relative;
     height: 5%;
     width: 15%;
+	margin-left:0!important;
 }
 .position_1{
     position: relative;
@@ -116,7 +281,7 @@ fieldset[disabled] .form-control {
     height: 5%;
     width: 15%;
     top: 0%;
-    left: 60%;
+    left:55%;
 }
 .position_2{
     position: relative;
@@ -124,7 +289,7 @@ fieldset[disabled] .form-control {
     height: 5%;
     width: 15%;
     top: 10%;
-    left: 4%;
+   left:0;
 }
 .position_3{
     position: relative;
@@ -132,21 +297,21 @@ fieldset[disabled] .form-control {
     height: 5%;
     width: 23%;
     top: 10%;
-    left: 23%;
+    left: 20%;
 }
 .position_4{
     position: absolute;
     height: 5%;
     width: 15%;
     top: 19.5%;
-    left: 3.7%;
+    left:0;
 }
 .position_5{
     position: absolute;
     height: 5%;
     width: 15%;
     top: 30%;
-    left: 3.7%;
+    left:0;
 }
 .span_11{
     position: absolute;
@@ -167,9 +332,10 @@ fieldset[disabled] .form-control {
     left: 10%;
 }
 .text_1{
-    position: absolute;
+	position: absolute;
     top: 10%;
-    left: 35%;
+    left: 29%;
+    width: 270px;
 }
 .button{
     position: absolute;
@@ -185,17 +351,33 @@ fieldset[disabled] .form-control {
     width: 60%;
     height: 100%;
 }
+.input1{
+	width: 50%;
+    height: 50%;
+    position: absolute;
+    top: 40%!important;
+    left: 20%;
+}
+
+.input6{
+	width: 50%;
+    height: 50%;
+    position: absolute;
+    top: 75%!important;
+    left: 20%;
+}
+
 .Slider{
     position: absolute;
     top: 1%;
-    left:23%;
+  left:20%;
     height: 5%;
     width: 33%;
 }
 .Slider_1{
     position: absolute;
     top:21%;
-    left:23%;
+  left:20%;
     height: 5%;
     width: 33%;
 }
@@ -224,12 +406,12 @@ fieldset[disabled] .form-control {
 .sensitivity{
 display: inline-block;
     font-size: 1.5rem;
-    margin-right: 10%;
+    margin-right: 1.25rem;
 }
 .Slider_2{
     position: absolute;
     top:32%;
-    left:23%;
+  left:20%;
     height: 5%;
     width: 33%;
 }
@@ -238,7 +420,7 @@ display: inline-block;
     height: 5%;
     width: 15%;
     top: 40%;
-    left: 3.7%;
+    left:0;
 }
 .input1{
     position: absolute;
@@ -250,21 +432,21 @@ display: inline-block;
      height: 50%;
      position: absolute;
      top: 85%;
-     left:80%;
+     left:75%;
  }
 .input3{
     width: 50%;
     height: 50%;
     position: absolute;
     top: 95%;
-    left:80%;
+    left:75%;
 }
 .input4{
     width: 50%;
     height: 50%;
     position: absolute;
     top: 95%;
-    left:22.5%;
+    left:20%;
 }
 .rld{
     width: 15%;
@@ -275,24 +457,31 @@ display: inline-block;
     width: 120px;
     height: 40px;
 }
+
+.closed{
+	float: right;
+}
+.closed:hover{
+	color: red;
+}
 .position_7{
     position: absolute;
     height: 5%;
     width: 15%;
     top: 55%;
-    left: 3.5%;
+   left:0;
 }
 .Slider_3{
     position: absolute;
     top:56%;
-    left:23%;
+  left:20%;
     height: 5%;
     width: 33%;
 }
 .ad{
     position: absolute;
     top:50%;
-    left:3%;
+    /* left:3%; */
 }
 .ad >img:hover{
     width: 110%;
@@ -303,19 +492,19 @@ display: inline-block;
     height: 5%;
     width: 15%;
     top: 65%;
-    left: 3.5%;
+   left:0;
 }
 .Slider_4{
     position: absolute;
     top:66%;
-    left:23%;
+  left:20%;
     height: 5%;
     width: 33%
 }
 .Slider_5{
     position: absolute;
     top:76%;
-    left:23%;
+  left:20%;
     height: 5%;
     width: 33%
 }
@@ -324,19 +513,19 @@ display: inline-block;
     height: 5%;
     width: 15%;
     top: 75%;
-    left: 3.5%;
+   left:0;
 }
 .position_10{
     position: absolute;
     height: 5%;
     width: 15%;
     top: 85%;
-    left: 3.5%;
+   left:0;
 }
 .Slider_6{
     position: absolute;
     top:86%;
-    left:23%;
+  left:20%;
     height: 5%;
     width: 33%
 }
@@ -345,19 +534,19 @@ display: inline-block;
      height: 5%;
      width: 15%;
      top: 55%;
-     left: 60%;
+     left:55%;
  }
 .position_20{
     position: absolute;
     height: 5%;
     width: 15%;
     top: 95%;
-    left: 3.5%;
+   left:0;
 }
 .e{
     height: 10%;
     top: 75%;
-    left: 76.3%;
+    left: 75%;
     width: 7.5%;
     position: absolute;
 
@@ -366,6 +555,7 @@ display: inline-block;
     position: absolute;
     background:#0E2D65;
     border: rgba(106, 90, 205, 0.51) solid 1px;
+	left: 0;
 }
 .text_10:hover{
     background:#0E2D65;
@@ -374,14 +564,14 @@ display: inline-block;
 .Slider_7{
     position: absolute;
     top:55%;
-    left:80%;
+    left:75%;
     height: 5%;
     width: 33%
 }
 .Slider_8{
     position: absolute;
     top:65%;
-    left:80%;
+    left:75%;
     height: 5%;
     width: 33%
 }
@@ -390,41 +580,41 @@ display: inline-block;
     height: 5%;
     width: 15%;
     top: 65%;
-    left: 60%;
+    left:55%;
 }
 .position_13{
     position: absolute;
     height: 5%;
     width: 15%;
     top: 75%;
-    left: 60%;
+    left:55%;
 }
 .position_14{
     position: absolute;
     height: 5%;
     width: 15%;
     top: 85%;
-    left: 60%;
+    left:55%;
 }
 .position_15{
     position: absolute;
     height: 5%;
     width: 15%;
     top: 75%;
-    left: 80%;
+    left:75%;
 }
 .position_16{
     position: absolute;
     height: 5%;
     width: 15%;
     top: 85%;
-    left: 80%
+    left:75%;
 }
 .ps{
     width: 50%;
     position: absolute;
     top: 105%;
-    left: 3.5%
+    /* left: 3.5% */
 }
 .position_18{
     border: 1px solid rgba(192, 192, 192, 0.17);
@@ -459,7 +649,7 @@ border: #B2BDCF;
     height: 5%;
     width: 15%;
     top: 95%;
-    left: 60%;
+    left:55%;
 }
 .plus{
     border-radius:3px;
@@ -495,17 +685,15 @@ border: #B2BDCF;
 
 /*弹出层*/
 .Popup_1{
-    background-color: #072E69;
     z-index: 999;
-    width: 60%;
-    height: 60%;
-    position:fixed;
-    top:0;
-    right:0;
-    left:0;
-    bottom:0;
-    margin:auto;
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    margin: auto;
     display: none;
+	background:rgba(100,100,100,.6);
 }
 .Popup_1>img{
     position:absolute;
@@ -520,13 +708,15 @@ border: #B2BDCF;
 canvas{
      border: 1px solid seagreen;
     background: aliceblue;
+	margin: 100px auto 10px;
+	display: block;
 }
 
 
 
 
 /*---------------滑动条-----------------*/
-.progress1{position: relative; width:300px;margin: auto;display: inline-block}
+.progress1{position: relative; width:280px;margin: auto;display: inline-block}
 .progress_bg1{height: 10px; border: 1px solid rgba(255, 255, 255, 0.25); border-radius: 5px; overflow: hidden;background-color: #0e2d65;}
 .progress_bar1{background: linear-gradient(#6bb6f1, #135493); width: 0; height: 10px; border-radius: 5px;}
 .progress_btn1{width: 25px; height: 25px; position: absolute;background: #0e2d65;
@@ -538,7 +728,7 @@ background:url("../images/RoundBall1.png ")no-repeat }
     left: 45%;
 }
 
-.progress2{position: relative; width:300px;margin: auto;display: inline-block}
+.progress2{position: relative; width:280px;margin: auto;display: inline-block}
 .progress_bg2{height: 10px; border: 1px solid rgba(255, 255, 255, 0.25); border-radius: 5px; overflow: hidden;background-color: #0e2d65;}
 .progress_bar2{background: linear-gradient(#6bb6f1, #135493); width: 0; height: 10px; border-radius: 5px;}
 .progress_btn2{width: 25px; height: 25px; position: absolute;background: #0e2d65;
@@ -549,7 +739,7 @@ background:url("../images/RoundBall1.png ")no-repeat }
     position: absolute;
     left: 45%;
 }
-.progress3{position: relative; width:300px;margin: auto;display: inline-block}
+.progress3{position: relative; width:280px;margin: auto;display: inline-block}
 .progress_bg3{height: 10px; border: 1px solid rgba(255, 255, 255, 0.25); border-radius: 5px; overflow: hidden;background-color: #0e2d65;}
 .progress_bar3{background: linear-gradient(#6bb6f1, #135493); width: 0; height: 10px; border-radius: 5px;}
 .progress_btn3{width: 25px; height: 25px; position: absolute;background: #0e2d65;
@@ -561,7 +751,7 @@ background:url("../images/RoundBall1.png ")no-repeat }
     left: 45%;
 }
 
-.progress4{position: relative; width:300px;margin: auto;display: inline-block}
+.progress4{position: relative; width:280px;margin: auto;display: inline-block}
 .progress_bg4{height: 10px; border: 1px solid rgba(255, 255, 255, 0.25); border-radius: 5px; overflow: hidden;background-color: #0e2d65;}
 .progress_bar4{background: linear-gradient(#6bb6f1, #135493); width: 0; height: 10px; border-radius: 5px;}
 .progress_btn4{width: 25px; height: 25px; position: absolute;background: #0e2d65;
@@ -573,7 +763,7 @@ background:url("../images/RoundBall1.png ")no-repeat }
     left: 45%;
 }
 
-.progress5{position: relative; width:300px;margin: auto;display: inline-block}
+.progress5{position: relative; width:280px;margin: auto;display: inline-block}
 .progress_bg5{height: 10px; border: 1px solid rgba(255, 255, 255, 0.25); border-radius: 5px; overflow: hidden;background-color: #0e2d65;}
 .progress_bar5{background: linear-gradient(#6bb6f1, #135493); width: 0; height: 10px; border-radius: 5px;}
 .progress_btn5{width: 25px; height: 25px; position: absolute;background: #0e2d65;
@@ -585,7 +775,7 @@ background:url("../images/RoundBall1.png ")no-repeat }
     left: 45%;
 }
 
-.progress6{position: relative; width:300px;margin: auto;display: inline-block}
+.progress6{position: relative; width:280px;margin: auto;display: inline-block}
 .progress_bg6{height: 10px; border: 1px solid rgba(255, 255, 255, 0.25); border-radius: 5px; overflow: hidden;background-color: #0e2d65;}
 .progress_bar6{background: linear-gradient(#6bb6f1, #135493); width: 0; height: 10px; border-radius: 5px;}
 .progress_btn6{width: 25px; height: 25px; position: absolute;background: #0e2d65;
@@ -597,7 +787,7 @@ background:url("../images/RoundBall1.png ")no-repeat }
     left: 45%;
 }
 
-.progress7{position: relative; width:300px;margin: auto;display: inline-block}
+.progress7{position: relative; width:280px;margin: auto;display: inline-block}
 .progress_bg7{height: 10px; border: 1px solid rgba(255, 255, 255, 0.25); border-radius: 5px; overflow: hidden;background-color: #0e2d65;}
 .progress_bar7{background: linear-gradient(#6bb6f1, #135493); width: 0; height: 10px; border-radius: 5px;}
 .progress_btn7{width: 25px; height: 25px; position: absolute;background: #0e2d65;
@@ -609,7 +799,7 @@ background:url("../images/RoundBall1.png ")no-repeat }
     left: 45%;
 }
 
-.progress8{position: relative; width:300px;margin: auto;display: inline-block}
+.progress8{position: relative; width:280px;margin: auto;display: inline-block}
 .progress_bg8{height: 10px; border: 1px solid rgba(255, 255, 255, 0.25); border-radius: 5px; overflow: hidden;background-color: #0e2d65;}
 .progress_bar8{background: linear-gradient(#6bb6f1, #135493); width: 0; height: 10px; border-radius: 5px;}
 .progress_btn8{width: 25px; height: 25px; position: absolute;background: #0e2d65;
@@ -621,7 +811,7 @@ background:url("../images/RoundBall1.png ")no-repeat }
     left: 45%;
 }
 
-.progress9{position: relative; width:300px;margin: auto;display: inline-block}
+.progress9{position: relative; width:280px;margin: auto;display: inline-block}
 .progress_bg9{height: 10px; border: 1px solid rgba(255, 255, 255, 0.25); border-radius: 5px; overflow: hidden;background-color: #0e2d65;}
 .progress_bar9{background: linear-gradient(#6bb6f1, #135493); width: 0; height: 10px; border-radius: 5px;}
 .progress_btn9{width: 25px; height: 25px; position: absolute;background: #0e2d65;
@@ -735,3 +925,97 @@ background:url("../images/RoundBall1.png ")no-repeat }
     }
 }
 
+#picture_area{
+	width: 800px;
+    height: 600px;
+    margin: 200px auto 0;
+}
+#picture_area img{
+	width: 100%;
+	height: 100%;
+	display: block;
+}
+
+.glyphicon-remove:before{
+	font-size: 8rem;
+	cursor: pointer;
+}
+
+.closed{
+	position: absolute;
+	right: 20px;
+	top: 20px;
+}
+
+@media only screen and (max-width: 1500px) {
+	.glyphicon-pencil:before {
+		margin-right: 5px;
+	}
+}
+
+.containers,.button_2{
+	display: none;
+}
+
+.endSubmit{
+	position: absolute;
+	bottom: -60px;
+	width: 100%;
+}
+.endSubmit button{
+	width: 100px;
+    padding: 5px 10px;
+    border-radius: 10px;
+	outline: none;
+}
+h1{
+	display: inline-block;
+}
+.reply{
+	width:208px;
+	height:48px;
+	background:rgba(2,20,67,0.26);
+	opacity:0.7;
+	border-radius:24px;
+	float: right;
+	margin: 12px 20px;
+	cursor: pointer;
+}
+
+.meun_box{
+	position: absolute;
+	top: 60px;
+	bottom: 0;
+	left: 10px;
+	right: 15px;
+	overflow-y: auto;
+	box-sizing: border-box;
+}
+.confirm{
+	position:fixed;
+	top: 0;
+	width: 100%;
+	text-align: center;
+	display: none;
+}
+.layui-layer-content{
+	position: fixed;
+	left: 50%;
+	top: 200px;
+	font-size: 30px;
+	z-index: 999;
+	color: seagreen;
+}
+.event_list{
+    width: 50%;
+}
+
+.void{
+	width: 100%;
+	height: 40px;
+	position: absolute;
+	top: 0;
+	left: 0;
+	/* background: lightgray; */
+	/* display: none; */
+}

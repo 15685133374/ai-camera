@@ -23,7 +23,6 @@ body {
 
 .layui-container-fluid {
     height: 100%;
-    padding-top: 20px;
 }
 
 .layui-container {
@@ -31,8 +30,6 @@ body {
 }
 
 .return-btn {
-    /* margin-top: 10px; */
-    /* margin-bottom: 10px; */
     width: 137px;
     height: 51px;
     background: url("../images/return-btn-bg.png")no-repeat;
@@ -44,4 +41,5 @@ body {
     align-items: center;
     font-weight: 500;
     font-size: 1.2rem;
+	cursor: pointer;
 }

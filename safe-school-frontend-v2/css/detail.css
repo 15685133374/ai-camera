@@ -89,3 +89,7 @@ thead>tr:hover {
 .touxiang {
     height: 60px;
 }
+
+.layui-table-page>div{
+    text-align: center;
+}

@@ -1,70 +1,61 @@
 // 车牌识别详情页面
+// var table ;
 layui.use(['table', 'laydate'], function() {
-    var table = layui.table;
-    var data = [
-            { "id": 10000, "username": "user-0", "sex": "女", "carnumber": "城市-0", "time": "签名-0", "location": 255, "img": 24 },
-            { "id": 10000, "username": "user-0", "sex": "女", "carnumber": "城市-0", "time": "签名-0", "location": 255, "img": 24 },
-            { "id": 10000, "username": "user-0", "sex": "女", "carnumber": "城市-0", "time": "签名-0", "location": 255, "img": 24 },
-            { "id": 10000, "username": "user-0", "sex": "女", "carnumber": "城市-0", "time": "签名-0", "location": 255, "img": 24 },
-            { "id": 10000, "username": "user-0", "sex": "女", "carnumber": "城市-0", "time": "签名-0", "location": 255, "img": 24 },
-            { "id": 10000, "username": "user-0", "sex": "女", "carnumber": "城市-0", "time": "签名-0", "location": 255, "img": 24 },
-            { "id": 10000, "username": "user-0", "sex": "女", "carnumber": "城市-0", "time": "签名-0", "location": 255, "img": 24 },
-            { "id": 10000, "username": "user-0", "sex": "女", "carnumber": "城市-0", "time": "签名-0", "location": 255, "img": 24 },
-            { "id": 10000, "username": "user-0", "sex": "女", "carnumber": "城市-0", "time": "签名-0", "location": 255, "img": 24 },
-            { "id": 10000, "username": "user-0", "sex": "女", "carnumber": "城市-0", "time": "签名-0", "location": 255, "img": 24 },
-            { "id": 10000, "username": "user-0", "sex": "女", "carnumber": "城市-0", "time": "签名-0", "location": 255, "img": 24 },
-            { "id": 10000, "username": "user-0", "sex": "女", "carnumber": "城市-0", "time": "签名-0", "location": 255, "img": 24 },
-            { "id": 10000, "username": "user-0", "sex": "女", "carnumber": "城市-0", "time": "签名-0", "location": 255, "img": 24 },
-            { "id": 10000, "username": "user-0", "sex": "女", "carnumber": "城市-0", "time": "签名-0", "location": 255, "img": 24 },
-            { "id": 10000, "username": "user-0", "sex": "女", "carnumber": "城市-0", "time": "签名-0", "location": 255, "img": 24 },
-            { "id": 10000, "username": "user-0", "sex": "女", "carnumber": "城市-0", "time": "签名-0", "location": 255, "img": 24 },
-            { "id": 10000, "username": "user-0", "sex": "女", "carnumber": "城市-0", "time": "签名-0", "location": 255, "img": 24 },
-            { "id": 10000, "username": "user-0", "sex": "女", "carnumber": "城市-0", "time": "签名-0", "location": 255, "img": 24 },
-            { "id": 10000, "username": "user-0", "sex": "女", "carnumber": "城市-0", "time": "签名-0", "location": 255, "img": 24 },
-            { "id": 10000, "username": "user-0", "sex": "女", "carnumber": "城市-0", "time": "签名-0", "location": 255, "img": 24 },
-            { "id": 10000, "username": "user-0", "sex": "女", "carnumber": "城市-0", "time": "签名-0", "location": 255, "img": 24 },
-            { "id": 10000, "username": "user-0", "sex": "女", "carnumber": "城市-0", "time": "签名-0", "location": 255, "img": 24 },
-            { "id": 10000, "username": "user-0", "sex": "女", "carnumber": "城市-0", "time": "签名-0", "location": 255, "img": 24 },
-            { "id": 10000, "username": "user-0", "sex": "女", "carnumber": "城市-0", "time": "签名-0", "location": 255, "img": 24 },
-            { "id": 10000, "username": "user-0", "sex": "女", "carnumber": "城市-0", "time": "签名-0", "location": 255, "img": 24 },
-            { "id": 10000, "username": "user-0", "sex": "女", "carnumber": "城市-0", "time": "签名-0", "location": 255, "img": 24 },
-            { "id": 10000, "username": "user-0", "sex": "女", "carnumber": "城市-0", "time": "签名-0", "location": 255, "img": 24 },
-            { "id": 10000, "username": "user-0", "sex": "女", "carnumber": "城市-0", "time": "签名-0", "location": 255, "img": 24 },
-            { "id": 10000, "username": "user-0", "sex": "女", "carnumber": "城市-0", "time": "签名-0", "location": 255, "img": 24 },
-            { "id": 10000, "username": "user-0", "sex": "女", "carnumber": "城市-0", "time": "签名-0", "location": 255, "img": 24 },
-            { "id": 10000, "username": "user-0", "sex": "女", "carnumber": "城市-0", "time": "签名-0", "location": 255, "img": 24 },
-            { "id": 10000, "username": "user-0", "sex": "女", "carnumber": "城市-0", "time": "签名-0", "location": 255, "img": 24 },
-            { "id": 10000, "username": "user-0", "sex": "女", "carnumber": "城市-0", "time": "签名-0", "location": 255, "img": 24 },
-            { "id": 10000, "username": "user-0", "sex": "女", "carnumber": "城市-0", "time": "签名-0", "location": 255, "img": 24 },
-            { "id": 10000, "username": "user-0", "sex": "女", "carnumber": "城市-0", "time": "签名-0", "location": 255, "img": 24 },
-            { "id": 10000, "username": "user-0", "sex": "女", "carnumber": "城市-0", "time": "签名-0", "location": 255, "img": 24 },
-            { "id": 10000, "username": "user-0", "sex": "女", "carnumber": "城市-0", "time": "签名-0", "location": 255, "img": 24 },
-        ]
-        //第一个实例
+    var table=layui.table;
+    var t=Array();
+    function getData() {
+        // var uid = getCookie("uid");
+        var host = window.location.host;
+        host = 'http://' + host
+        api = '/api/v1/ai/list';
+        axios
+            .get(host + api)
+            .then(function (response) {
+                console.log(response.data)
+                
+                var d=response.data.result
+                d.forEach(e => {
+                    var p=e.img_path
+                    var index=p.indexOf('/saveface')
+                    var _p=p.slice(index)
+                    var one={img_path:_p,time:e.time,location:e.location,name:e.info.name}
+                    t.push(one)
+                });
+                sessionStorage.setItem('d',d);
+                console.log(t)
+                table.render({elem: '#demo',
+                skin: 'nob', //行边框风格
+                height: 600,
+                // url: host + api, //数据接口
+                data:t,
+                page: { theme: '#447DDB', layout: ['prev', 'page', 'next'], }, //开启分页
+                cols: [
+                    [ //表头
+                        // { field: 'id', title: '序号' },
+                        { field: 'name', title: '姓名' },
+                        // { field: 'sex', title: '性别', },
+                        // { field: 'carnumber', title: '车牌号' },
+                        { field: 'time', title: '时间' },
+                        { field: 'location', title: '地点' },
+                        { field: 'img', title: '抓拍图片', templet: '#titleTpl' }
+                    ]
+                ],
+                
+                // 数据渲染回调。
+                done: function(res, curr, count) {
+                    $('.layui-table').css({ "background-color": 'transparent', 'color': 'white' });
+                    // $('tr').css({ "background-color": 'transparent' });
+                }})
+            })
+            .catch(function (error) {
+                console.log(error);
+            });
+    }
     table.render({
-        elem: '#demo',
-        skin: 'nob', //行边框风格
-        height: 600,
-        //   ,url: 'https://www.layui.com/demo/table/user/?page=1&limit=30' //数据接口
-        data: data,
-        page: { theme: '#447DDB', layout: ['prev', 'page', 'next'], }, //开启分页
-        cols: [
-            [ //表头
-                { field: 'id', title: '序号' },
-                { field: 'username', title: '姓名' },
-                { field: 'sex', title: '性别', },
-                { field: 'carnumber', title: '车牌号' },
-                { field: 'time', title: '时间' },
-                { field: 'location', title: '地点' },
-                { field: 'img', title: '抓拍图片', templet: '#titleTpl' }
-            ]
-        ],
-        // 数据渲染回调。
-        done: function(res, curr, count) {
-            $('.layui-table').css({ "background-color": 'transparent', 'color': 'white' });
-            // $('tr').css({ "background-color": 'transparent' });
-        }
+        
     });
+    getData()
+
 
     // 日期时间选择
     var laydate = layui.laydate;
@@ -82,3 +73,6 @@ layui.use(['table', 'laydate'], function() {
         }
     });
 });
+
+
+

@@ -2,8 +2,8 @@ var cameras = (function () {
     var container = $('.temp');
     var template = {
         canvas: ['<canvas width="320" >', '</canvas>'].join(""),
-        li_1: '<li></li>',
-        img: ['<img width="320px" src="../images/15687_main.jpg">'].join(""),
+        li_1: '<li><span class="camera_title">beidou</span></li>',
+        img: ['<img width="320px" src="../images/bdlog.png">'].join(""),
         result: ['<div><li></li></div>'].join(""),
         li_str: ['<li user_data="0">',
             '    <span></span>',
@@ -22,11 +22,24 @@ var cameras = (function () {
         var uid = getCookie("uid");
         var host = window.location.host;
         host = 'http://' + host
-        api = '/api/v1/device/list';
+        api = '/api/v1/device_test/list';
         axios
             .get(host + api)
             .then(function (response) {
                 updateContent(response.data.result);
+                let ipArray = new Array();
+                let locationArray = new Array();
+                let ipobj;
+                let locobj;
+                for(let x=0;x<response.data.result.length;x++){
+                    $('.camera_title').eq(x).html(response.data.result[x].ip+'<br />'+response.data.result[x].location);
+                    ipArray.ipobj=response.data.result[x].ip;
+                    locationArray.locobj=response.data.result[x].location;
+                    ipArray.push( ipArray.ipobj);
+                    locationArray.push(response.data.result[x].location);
+                }
+                sessionStorage.setItem('response_res',JSON.stringify(response.data.result))
+               
             })
             .catch(function (error) {
                 console.log(error);
@@ -34,18 +47,19 @@ var cameras = (function () {
     }
 
     function updateContent(data) {
+        console.log(data)
         for (var key in data) {
-            var item = key;
+            var item = data[key].did;
             // var id = "camera" + item;
             var img = $(template.img);
             img.attr("id", item);
             img.click(function () {
                 //点击图片,播放实时视频流
                 var did = $(this).attr('id')
-                show_live(did)
-
+                show_live(did);
+                console.log('did'+did);
             });
-            container.append($(template.li_1).append(img))
+            container.append($(template.li_1).append(img));
         }
 
     }

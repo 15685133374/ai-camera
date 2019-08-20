@@ -33,3 +33,15 @@ var realTime = (function () {
         main: main
     }
 })($);
+
+
+
+//弹出层点击关闭按钮关闭当前
+// $('.close').click(function(){
+// 	$(this).parent().parent('.modal-content').css('display','none');
+// })
+
+//保安版监控大屏跳转到设置界面
+function goSet(){
+			window.location.href='setting.html';
+		}

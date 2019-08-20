@@ -3,6 +3,23 @@
     margin: 5px;
     height: 100%;
     padding: 10px;
+	position: relative;
+}
+
+.videoSource{
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	margin: auto;
+	display: none;
+}
+
+.close2{
+	float: right;
+	display: none;
+	cursor: pointer;
 }
 
 .event-class {
@@ -12,14 +29,18 @@
 }
 
 .event-class>li {
-    width: 100px;
+    width: 16.6%;
     height: 40px;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 10px;
+    margin: 10px 0;
 }
 
+.event-class>li a{
+	color: inherit;
+	text-underline: none;
+}
 .li-selected {
     background: #3767cc;
 }
@@ -87,5 +108,35 @@ thead>tr:hover {
 }
 
 #layui-table-page1 {
+    text-align: center;
+}
+
+.active_video{
+    color: red!important;
+}
+.active_btn{
+    background-color:#013F88;
+    padding: 4px 10px;
+}
+.underline{
+    width: 100%;
+    height: 1px;
+    border-bottom: 1px solid #2CA5E5;
+    display: block;
+}
+.layui-table-page > div {
+   text-align:center;
+}
+.current_video_title td{
+    width:33.33%;
+    float: left;
+}
+.current_video_title td div{
+    text-align:center;
+}
+.close_box{
+    height: 80px;
+}
+.layui-table-cell{
     text-align: center;
 }
