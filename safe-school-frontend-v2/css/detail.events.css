@@ -29,7 +29,7 @@
 }
 
 .event-class>li {
-    width: 16.6%;
+    width: 25%;
     height: 40px;
     display: flex;
     justify-content: center;
@@ -124,19 +124,40 @@ thead>tr:hover {
     border-bottom: 1px solid #2CA5E5;
     display: block;
 }
+
 .layui-table-page > div {
-   text-align:center;
+    text-align: center;
 }
+
+.layui-table-view .layui-table td, .layui-table-view .layui-table th{
+    text-align: center;
+}
+
+.current_video_title {
+    display: flex;
+    justify-content:space-between;
+}
+
 .current_video_title td{
-    width:33.33%;
-    float: left;
+    width: 33.3%;
 }
+
 .current_video_title td div{
-    text-align:center;
+    text-align: center;
+    padding: 0;
+}
+
+.layui-layer-loading {
+    left: 25%!important;
+    opacity: 0.3;
+    
+}
+.layui-layer-loading .layui-layer-loading1{
+    width: 100px!important;
+    height: 100px!important;
+    background-size: 100% 100%!important;
 }
 .close_box{
     height: 80px;
-}
-.layui-table-cell{
-    text-align: center;
+    line-height: 80px;
 }

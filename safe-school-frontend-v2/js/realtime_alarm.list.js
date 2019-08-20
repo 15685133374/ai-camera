@@ -6,19 +6,19 @@ var ai_ability_dict = {
     "body_detaction": "姿态检测",
     "hand_recognition": "姿态识别",
     "behavior_seekhelp": "求救事件",
-    "behavior_fall": "倒地事件",
+    "behavior_fall": "到地事件",
     "behavior_climb": "攀爬事件",
     "behavior_climbhigh": "攀高事件",
-    "fire_detaction": "火焰事件",
-    "smoke_detaction": "烟雾事件",
+    "fire_detaction": "火焰检测",
+    "smoke_detaction": "烟雾检测",
     "area_Intrusion": "闯入事件",
     "area_leave_post": "离岗事件",
     "area_leave_bed": "离床事件",
     "crowd_detaction": "聚众事件",
     "car_recognition": "车牌识别",
     "post_sleep": "睡岗事件",
-    "fight_detaction": "打架事件"
-}
+    "fight_detaction": "打架检测"
+};
 
 
 var realtime_alarm_list = (function () {
@@ -73,6 +73,7 @@ var realtime_alarm_list = (function () {
                 return;
             }
             var event = $(template.li_str);
+            console.log('event',event);
             if(ai_ability_dict[e.ai_ability])
             {
                  event.find('.event_type').text(ai_ability_dict[e.ai_ability]);
@@ -82,6 +83,7 @@ var realtime_alarm_list = (function () {
             }
             event.find('.event_time').text(e.time);
             event.find('.event_location').text(event_location);
+            event.find('.video_title').html(event_location)
             container.prepend(event);
             //modal show
             event_container = event_container + 1
@@ -96,7 +98,7 @@ var realtime_alarm_list = (function () {
             }
             var event_div = $(template.event_div)
             event_div.attr('id', event_id)
-            event_div.find('.event_type').text(ai_ability_dict[e.ai_ability])
+            event_div.find('.event_type').text(e.ai_ability)
             event_div.find('.event_location').text(event_location)
             event_div.find('.event_time').text(e.time)
             modal_dialog.append(event_div)
@@ -108,17 +110,15 @@ var realtime_alarm_list = (function () {
                 qidong_str.hide();
                 var value = msg.did;
                 $('.modal-img-live-' + value).attr('src', 'data:image/jpg;base64,' + msg.data);
-            })
-
+            });
             let response_res=sessionStorage.getItem('response_res');
-            let d=JSON.parse(response_res)
-            console.log(d)
-            console.log(did)
+            let d=JSON.parse(response_res);
+            console.log(d);
+            console.log(did);
             d.forEach(e=>{
-
                 if(did==e.did){
-                    console.log(e)
-                    $('.video_title').html(e.ip+'<br>'+e.location);
+                    console.log(e);
+                     $('.video_title').html(e.ip+'<br>'+e.location);
                 }
             })
             //弹出层倒计时

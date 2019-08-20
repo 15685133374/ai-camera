@@ -93,3 +93,9 @@ thead>tr:hover {
 .layui-table-page>div{
     text-align: center;
 }
+
+.layui-layer-loading .layui-layer-loading1{
+    width: 100px!important;
+    height: 100px!important;
+    background-size: 100% 100%!important;
+}

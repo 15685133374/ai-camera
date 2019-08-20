@@ -119,10 +119,10 @@
 			$('.edit').eq(i).click(function(){
 				f++;
 					if(f % 2 == 1){
-						$('.ipaddress').eq(i).removeAttr('disabled');
+						$('.ipaddress').eq(i).removeAttr('readonly');
 						$('.ipaddress').eq(i).attr('autofocus','autofocus');
 					}else{
-						$('.ipaddress').eq(i).attr('disabled','disabled');
+						$('.ipaddress').eq(i).attr('readonly','readonly');
 						$('.ipaddress').eq(i).removeAttr('autofocus');
 					}
 
