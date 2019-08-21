@@ -61,7 +61,6 @@ var cameras = (function () {
     function updateContent(data) {
         for (var key in data) {
             var item = data[key].did;
-            console.log()
             // var id = "camera" + item;
             var img = $(template.img);
             img.attr("id", item);
