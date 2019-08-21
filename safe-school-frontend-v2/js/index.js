@@ -51,6 +51,7 @@ function overtime() {
       socket.emit('dolive', { did: did, opt: 0 });
       console.log("关闭直播")
       content.remove()
+			
     }
   }
 }
@@ -98,6 +99,25 @@ $('.list').on('click','p',function () {
   // alert('000');
 })
 
+var host = window.location.host;
+	host = 'http://' + host;
+	let event_count_api='/api/v1/waring/list/cur_day';
+$.ajax({
+	url:host + event_count_api,
+	type:'get',
+	dataType:'json',
+	success:function (res) {
+		console.log('当天事件统计',res.data);
+		$('.behavior_seekhelp').text(res.data.behavior_seekhelp);
+		$('behavior_climb').text(res.data.behavior_climb);
+		$('.behavior_climbhigh').text(res.data.behavior_climbhigh);
+		$('.area_Intrusion').text(res.data.area_Intrusion);
+		$('.fire_detaction').text(res.data.fire_detaction);
+		$('.crowd_detaction').text(res.data.crowd_detaction);
+		$('.behavior_fall').text(res.data.behavior_fall);
+		$('.area_leave_post').text(res.data.area_leave_post);
+	},
+})
 
 
 

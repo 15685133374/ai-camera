@@ -46,7 +46,6 @@ let ai_en_ability_dict = {
     "fight_detaction": "打架事件"
 };
 
-
 layui.use(['table', 'laydate'], function () {
     var table = layui.table;
     // 日期时间选择
@@ -111,7 +110,7 @@ layui.use(['table', 'laydate'], function () {
             mouseenter: function () {
                 let empty_char = $(this).children('td').eq(1).find('div').text();
                 if (empty_char) {
-                    $(this).attr('title', '点击播放')
+                    $(this).attr('title', '点击播放视频')
                 }
             }
         }, 'tr')
