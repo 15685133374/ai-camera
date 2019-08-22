@@ -43,22 +43,22 @@ function overtime() {
         // console.log('close modal')
         $('#exampleModal1').modal('hide')
       }
-      var img=dialog.find('img')
-      img.attr('src', '')
-      var s_id = img.attr('class')
-      var did = s_id.slice("modal-img-live-".length)
-      socket.off(did) //停止对当前cam的直播
-      socket.emit('dolive', { did: did, opt: 0 });
-      console.log("关闭直播")
-      content.remove()
+      // var img=dialog.find('img')
+      // img.attr('src', '')
+      // var s_id = img.attr('class')
+      // var did = s_id.slice("modal-img-live-".length)
+      // socket.off(did) //停止对当前cam的直播
+      // socket.emit('dolive', { did: did, opt: 0 });
+      // console.log("关闭直播")
+      // content.remove()
 			
     }
   }
 }
-setInterval(function () {
-  // overtime(event_id,timer)
-  overtime()
-}, 1000);
+// setInterval(function () {
+//   // overtime(event_id,timer)
+//   overtime()
+// }, 1000);
 
 
 // var uid=getCookie("uid");
