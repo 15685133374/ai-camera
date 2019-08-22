@@ -46,7 +46,7 @@ $.ajax({
 					`<li>
 		            <div class="personal">
 		                <div class="headphoto">
-		                    <img class="face_info_person_img back_img" src=${res.data[i].info.one_face} alt="加载失败"/>
+		                    <img class="face_info_person_img back_img" src=${res.data[i].img_path} alt="加载失败"/>
 		                </div>
 		            </div>
 		            <div class="person_info_list">
