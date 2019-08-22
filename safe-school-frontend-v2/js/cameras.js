@@ -21,7 +21,7 @@ var cameras = (function () {
     function getData() {
         var uid = getCookie("uid");
         var host = window.location.host;
-        host = 'http://' + host
+        host = 'http://' + host;
         api = '/api/v1/device/list';
         axios
             .get(host + api)

@@ -263,9 +263,9 @@
 			console.log("event_data:",event_data);
 			var host = window.location.host;
 			host = 'http://' + host;
-			setting_api = '/api/v1/device_test/setting';
+			setting_api = '/api/v1/device/setting';
 			$.ajax({
-            // url:'http://127.0.0.1:5000/api/v1/device_test/setting',
+            // url:'http://127.0.0.1:5000/api/v1/device/setting',
             url:host+setting_api,
             type:'post',
             dataType:'json',

@@ -33,7 +33,7 @@ $('.temp').eq(2).on('click',function(){
 	// function makeSure(data){
 	// 					//发送坐标值
     //     $.ajax({
-    //         url:'http://127.0.0.1:5000/api/v1/device_test/test',
+    //         url:'http://127.0.0.1:5000/api/v1/device/test',
     //         type:'post',
     //         dataType:'json',
     //         data:{"data":JSON.stringify(data)},
