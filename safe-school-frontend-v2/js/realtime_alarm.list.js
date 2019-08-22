@@ -17,7 +17,8 @@ var ai_ability_dict = {
     "crowd_detaction": "聚众事件",
     "car_recognition": "车牌识别",
     "post_sleep": "睡岗事件",
-    "fight_detaction": "打架检测"
+    "fight_detaction": "打架检测",
+	"face_recognition":"人脸识别"
 };
 
 
@@ -71,13 +72,12 @@ var realtime_alarm_list = (function () {
 			type:'get',
 			success: function(res){
 				console.log('6条数据',res);
-				
 				for(let i=0;i<6;i++){
 					// let ability_cur ='"' + res.data[i].ai_ability + '"';
 					container.append(`
 						<div class="event_info">
 						    <div class="event_type_box">
-						    <img src="../images/unmake.png" />
+						    <img src=${res.data[i].do_flag==null|false ? '../images/unmake.png' : '../images/maked.png'} />
 						    <i class="event_type">${ai_ability_dict[res.data[i].ai_ability]}</i>
 						    </div>
 						    <div class="event_time_box">

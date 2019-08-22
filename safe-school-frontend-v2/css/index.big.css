@@ -113,7 +113,7 @@ option {
     box-sizing: border-box;
     float: left;
     position: relative;
-    background: rgba(255, 255, 255, .6);
+    background: rgba(255, 255, 255, .1);
 }
 
 .camera_title {

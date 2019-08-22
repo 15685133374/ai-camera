@@ -13,7 +13,7 @@
 			// 获取未设置的设备
 			var host = window.location.host;
 			host = 'http://' + host;
-			device_list_api =  '/api/v1/device_test/list',
+			device_list_api =  '/api/v1/device/list',
 			$.ajax({
             url:host+device_list_api,
             type:'get',
@@ -36,7 +36,7 @@
 					$(this).siblings().removeClass('active');
 					let ip=$(this).children('a').text();
 					console.log("ip",ip);
-					device_ip_api =  '/api/v1/device_test/list/ip';
+					device_ip_api =  '/api/v1/device/list/ip';
 						$.ajax({
 							url:host+device_ip_api,
 							data:{"ip":ip},

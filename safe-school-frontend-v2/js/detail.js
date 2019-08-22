@@ -3,6 +3,7 @@
 layui.use(['table', 'laydate'], function() {
     var table=layui.table;
     var t=Array();
+	let tableIns;
     let layer_index = layer.load(1, {
         shade: [0.1,'#fff'] //0.1透明度的白色背景
         });
@@ -27,7 +28,7 @@ layui.use(['table', 'laydate'], function() {
                 });
                 sessionStorage.setItem('d',d);
                 console.log(t)
-                table.render({
+                tableIns=table.render({
                 elem: '#demo',
                 skin: 'nob', //行边框风格
                 height: 700,
@@ -75,14 +76,40 @@ layui.use(['table', 'laydate'], function() {
         done: function(value, date, endDate) {
             console.log('日期范围选择完毕')
             console.log(value); //得到日期生成的值，如：2017-08-18
+			
             console.log(date); //得到日期时间对象：{year: 2017, month: 8, date: 18, hours: 0, minutes: 0, seconds: 0}
             console.log(endDate); //得结束的日期时间对象，开启范围选择（range: true）才会返回。对象成员同上。
-            table.reload({
-                elem: '#demo',
-                data: [{"time": "暂无数据……！"}],
-            })
+            let layer_index1 = layer.load(1, {
+                shade: [0.1,'#fff'] //0.1透明度的白色背景
+                });
+			let host = window.location.host;
+			host = 'http://' + host;
+			option_api = '/api/v1/ai/list/date_cal';
+			$.ajax({
+				url:host + option_api,
+				type:'get',
+				data:{'value':value},
+				dataType:'json',
+				success: (function (res) {
+					layer.close(layer_index1);
+					console.log(res.data)
+					 if (res.data === "something wrong!") {
+					    res.data = [{"location": "暂无数据……！"}];
+					}
+					tableIns.reload({
+					 data:res.data,
+					  page: {
+						curr: 1 ,//重新从第 1 页开始
+						theme: '#447DDB', layout: ['prev', 'page', 'next']
+					  }
+					});
+					
+					
+				})
+				
+			})
         }
-       
+		 
     });
 });
 
