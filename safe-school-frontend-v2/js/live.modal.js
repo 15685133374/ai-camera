@@ -1,11 +1,13 @@
+var timer;
+
 function show_live(did) {
     console.log('show_live', did)
-    // var did = $(this).attr('id')
-    // 创建一个弹出框.
+        // var did = $(this).attr('id')
+        // 创建一个弹出框.
     $('#exampleModa2').modal('show')
-    // $('#exampleModa2').find('img').attr('id', 'modal-img-live-' + did)
+        // $('#exampleModa2').find('img').attr('id', 'modal-img-live-' + did)
     socket.emit('dolive', { did: did, opt: 1 });
-    socket.on(did, function (msg) {
+    socket.on(did, function(msg) {
         var live_src = msg.live_src;
         var user_watch_token = msg.user_watch_token;
         console.log(msg)
@@ -25,6 +27,8 @@ function show_live(did) {
         flvPlayer.load();
         flvPlayer.play();
         // start sending user_watch_token to server to extend watch
+        // 启动定时任务
+        timer = setInterval(function() { socket.emit('extend_watch', { user_watch_token: user_watch_token }); }, 5000);
     })
 
     let response_res = sessionStorage.getItem('response_res');
@@ -32,17 +36,17 @@ function show_live(did) {
     console.log(d)
     console.log(did)
     d.forEach(e => {
-        if (did == e.did) {
-            console.log(e)
-            $('.video_title').html(e.location);
-        }
-    })
-    //
+            if (did == e.did) {
+                console.log(e)
+                $('.video_title').html(e.location);
+            }
+        })
+        //
 }
 
 
 // 直播弹窗关闭
-$('#exampleModa2').on('hide.bs.modal', function (e) {
+$('#exampleModa2').on('hide.bs.modal', function(e) {
     var player = $('#exampleModa2').find('video')
     var user_watch_token = player.attr('user_watch_token')
     var did = player.attr('did')
@@ -50,6 +54,7 @@ $('#exampleModa2').on('hide.bs.modal', function (e) {
     player.attr('did', '')
     socket.off(did) //停止对当前cam的直播
     socket.emit('dolive', { did: did, opt: 0, user_watch_token: user_watch_token });
+    clearInterval(timer)
 })
 
 // $('#exampleModal1').on('hide.bs.modal', function(e) {
@@ -64,4 +69,4 @@ $('#exampleModa2').on('hide.bs.modal', function (e) {
 //     // socket.off(did) //停止对当前cam的直播
 //     // socket.emit('dolive', { did: did, opt: 0 });
 //     // console.log("关闭直播")
-// })
+// }
