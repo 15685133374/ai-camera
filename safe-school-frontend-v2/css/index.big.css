@@ -113,7 +113,11 @@ option {
     box-sizing: border-box;
     float: left;
     position: relative;
+<<<<<<< HEAD
     background: rgba(255, 255, 255, .6);
+=======
+    background: rgba(255, 255, 255, .1);
+>>>>>>> anhuiyou
 }
 
 .camera_title {
@@ -169,8 +173,28 @@ option {
     line-height: 38px;
     display: flex;
     justify-content: space-between;
+	width: 50%;
+	box-sizing: border-box;
+   
 }
 
+.event_info div{
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+.event_type_box{
+	width:25%;
+}
+
+.event_time_box{
+	width:40%;
+}
+
+.event_location_box{
+	width:35%;
+}
 .event_info_left {
     float: left;
 }
@@ -317,7 +341,6 @@ option {
     height: 100px;
     background: url(../images/photo_box.png);
     background-size: 100% 100%;
-    position: relative;
 }
 
 .person_box li div {
@@ -330,11 +353,6 @@ option {
 .person_info .headphoto {
     width: 80%;
     height: 80%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
     margin: auto;
     border-radius: 10px;
     overflow: hidden;
@@ -559,6 +577,7 @@ option {
         height: 50px;
         width: auto;
     }
+<<<<<<< HEAD
 }
 
 .change{
@@ -566,3 +585,21 @@ option {
     border: none;
     cursor: pointer;
 }
+=======
+}
+
+.change{
+    background: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.back_img{
+	height: 100%;
+	border-radius: 100%;
+}
+
+/* .person_info_list{
+	text-align: center;
+} */
+>>>>>>> anhuiyou

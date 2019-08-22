@@ -20,7 +20,8 @@ let ai_cn_ability_dict = {
     "聚众事件": "crowd_detaction",
     "车牌识别": "car_recognition",
     "睡岗事件": "post_sleep",
-    "打架事件": "fight_detaction"
+    "打架事件": "fight_detaction",
+	"人脸识别": "face_recognition"
 };
 
 //定义英文词典
@@ -43,9 +44,9 @@ let ai_en_ability_dict = {
     "crowd_detaction": "聚众事件",
     "car_recognition": "车牌识别",
     "post_sleep": "睡岗事件",
-    "fight_detaction": "打架事件"
+    "fight_detaction": "打架事件",
+	"face_recognition":"人脸识别"
 };
-
 
 layui.use(['table', 'laydate'], function () {
     var table = layui.table;
@@ -54,6 +55,7 @@ layui.use(['table', 'laydate'], function () {
     let event_res = '';      //全局定义所有事件的返回数据；
     let data_content = '';   //全局定义所有事件的存储容器
     let event_name = '';     //全局定义事件名称
+	let tableIns;
 
     //定义显示表格事件函数
     function display_event_list() {
@@ -64,7 +66,7 @@ layui.use(['table', 'laydate'], function () {
             }
         }
         console.log('点击修改后的数据', data_content);
-        table.render({
+        tableIns = table.render({
             elem: '#demo',
             skin: 'nob', //行边框风格
             height: 600,
@@ -87,6 +89,7 @@ layui.use(['table', 'laydate'], function () {
                 // console.log("res", res);
                 $('.layui-table').css({"background-color": 'transparent', 'color': 'white'});
                 event_res = res.data;
+				
             }
         });
         $('.layui-table').eq(1).children('tbody').on({
@@ -111,7 +114,7 @@ layui.use(['table', 'laydate'], function () {
             mouseenter: function () {
                 let empty_char = $(this).children('td').eq(1).find('div').text();
                 if (empty_char) {
-                    $(this).attr('title', '点击播放')
+                    $(this).attr('title', '点击播放视频')
                 }
             }
         }, 'tr')
@@ -161,6 +164,43 @@ layui.use(['table', 'laydate'], function () {
             console.log(value); //得到日期生成的值，如：2017-08-18
             console.log(date); //得到日期时间对象：{year: 2017, month: 8, date: 18, hours: 0, minutes: 0, seconds: 0}
             console.log(endDate); //得结束的日期时间对象，开启范围选择（range: true）才会返回。对象成员同上。
+			$('.event-class li').children('a').removeClass('.active_btn');
+			   let layer_index1 = layer.load(1, {
+			    shade: [0.1,'#fff'] //0.1透明度的白色背景
+			    });
+			let host = window.location.host;
+			host = 'http://' + host;
+			let option_api = '/api/v1/waring/list/date_cal';	
+			$.ajax({
+				url:host + option_api,
+				type:'get',
+				data:{'value':value},
+				dataType:'json',
+				success: function (res) {
+					console.log('筛选返回结果',res)
+					layer.close(layer_index1);
+					 if (res.data === "something wrong!") {
+					    res.data = [{"location": "暂无数据……！"}];
+					}else{
+						for(let i in res.data){
+							if (ai_en_ability_dict[res.data[i].ai_ability]) {
+							    // console.log('事件类型',ai_en_ability_dict[data_content[i].ai_ability])
+							   res.data[i].ai_ability = ai_en_ability_dict[res.data[i].ai_ability];
+							}
+						}
+					}
+					tableIns.reload({
+					 data:res.data,
+					  page: {
+						curr: 1 ,//重新从第 1 页开始
+						theme: '#447DDB', layout: ['prev', 'page', 'next']
+					  },
+					});
+					console.log('解析后的数据',res.data)
+				}
+				
+			});
+			
         }
     });
 
@@ -197,6 +237,48 @@ layui.use(['table', 'laydate'], function () {
         get_data();     //调用获取数据函数
         
     });
+	
+		$('#search').on('click','.search_events',function(){
+			$('.event-class').children('li').find('a').removeClass('.active_btn');
+			let layer_index2 = layer.load(1, {
+			    shade: [0.1,'#fff'] //0.1透明度的白色背景
+			    });
+			let host = window.location.host;
+			host = 'http://' + host;
+			let address_api ='/api/v1/waring/list/fuzzy_query';
+			let address_value = $('.search_text').val();
+			console.log('地址关键字',address_value);
+			$.ajax({
+				url:host + address_api,
+				type:'get',
+				data:{'value':address_value},
+				dataType:'json',
+				success: function (res) {
+					console.log('筛选返回结果',res)
+					// layer.close(layer_index1);
+					 if (res.data === "something wrong!") {
+						res.data = [{"location": "暂无数据……！"}];
+					}else{
+						for(let i in res.data){
+							if (ai_en_ability_dict[res.data[i].ai_ability]) {
+							    // console.log('事件类型',ai_en_ability_dict[data_content[i].ai_ability])
+							   res.data[i].ai_ability = ai_en_ability_dict[res.data[i].ai_ability];
+							}
+						}
+					}
+					layer.close(layer_index2);
+					tableIns.reload({
+					 data:res.data,
+					  page: {
+						curr: 1 ,//重新从第 1 页开始
+						theme: '#447DDB', layout: ['prev', 'page', 'next']
+					  },
+					});
+					console.log('按地址获取解析后的数据',res.data)
+				}
+				
+			});	
+		})
 
 });
 

@@ -17,8 +17,15 @@ var ai_ability_dict = {
     "crowd_detaction": "聚众事件",
     "car_recognition": "车牌识别",
     "post_sleep": "睡岗事件",
+<<<<<<< HEAD
     "fight_detaction": "打架检测"
 };
+=======
+    "fight_detaction": "打架检测",
+	"face_recognition":"人脸识别"
+};
+
+>>>>>>> anhuiyou
 
 
 var realtime_alarm_list = (function () {
@@ -58,7 +65,44 @@ var realtime_alarm_list = (function () {
             '</div>',
         ].join(""),
     };
-
+	
+	let alarm_list_num=container.children('.event_info').length;
+	if(alarm_list_num==0){
+		let host = window.location.host;
+		host = 'http://' + host;
+		let new_api = '/api/v1/waring/list/new';
+		$.ajax({
+			url:host + new_api,
+			dataType:'json',
+			type:'get',
+			success: function(res){
+				console.log('6条数据',res);
+				for(let i=0;i<6;i++){
+					// let ability_cur ='"' + res.data[i].ai_ability + '"';
+					container.append(`
+						<div class="event_info">
+						    <div class="event_type_box">
+						    <img src=${res.data[i].do_flag==null|false ? '../images/unmake.png' : '../images/maked.png'} />
+						    <i class="event_type">${ai_ability_dict[res.data[i].ai_ability]}</i>
+						    </div>
+						    <div class="event_time_box">
+						    <img src="../images/time.png" />
+						    <span class="time event_time">${res.data[i].time}</span>
+						    </div>
+						    <div class="event_location_box">
+						    <img src="../images/address.png" />
+						    <span class="event_location">${res.data[i].location}</span>
+						    </div>
+						    </div>
+					`);
+					container.children('.event_info:even').css({'float':'left','padding-right':'15px'});
+					container.children('.event_info:odd').css({'float':'right','padding-left':'15px'});
+				}
+				
+			}
+		})
+		
+	}
 
     function updateContent(data) {
         var event_location = data.location;
