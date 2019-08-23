@@ -161,3 +161,18 @@ thead>tr:hover {
     height: 80px;
     line-height: 80px;
 }
+
+.layui_date{
+	position: absolute;
+	right: 0;
+	border: 1px solid #1E9FFF;
+	height: 36px;
+}
+
+.layui-input:focus {
+     border-color: #1E9FFF!important; 
+}
+
+.layui-input:hover {
+     border-color: #1E9FFF!important; 
+}
