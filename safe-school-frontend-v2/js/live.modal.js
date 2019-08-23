@@ -5,13 +5,14 @@ function show_live(did) {
         // var did = $(this).attr('id')
         // 创建一个弹出框.
     $('#exampleModa2').modal('show')
-        // $('#exampleModa2').find('img').attr('id', 'modal-img-live-' + did)
-    socket.emit('dolive', { did: did, opt: 1 });
+    var domain = document.domain;
+    // $('#exampleModa2').find('img').attr('id', 'modal-img-live-' + did)
+    socket.emit('dolive', { did: did, opt: 1, domain: domain });
     socket.on(did, function(msg) {
         var live_src = msg.live_src;
         var user_watch_token = msg.user_watch_token;
         console.log(msg)
-        var domain = document.domain;
+
         // var src='http://'+domain+":8080/live/livestream/"+did+'.flv'
         // console.log(src)
         $('#videoElement').attr('user_watch_token', user_watch_token)
