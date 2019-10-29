@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 .detail-list {
     height: 100%;
     box-shadow: 0 0 15px #4274cb inset;
@@ -113,4 +114,139 @@ thead>tr:hover {
 
 .layui-input:hover {
      border-color: #1E9FFF!important; 
+=======
+.detail-list {
+    height: 100%;
+    box-shadow: 0 0 15px #4274cb inset;
+}
+
+.detail-header {
+    padding-top: 20px;
+    padding-left: 10px;
+}
+
+.square {
+    content: '';
+    width: 15px;
+    height: 20px;
+    background-color: #457bdf;
+    display: inline-block;
+}
+
+.detial-input {
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+.detial-input>div {
+    width: 250px;
+    margin-right: 30px;
+    display: flex;
+}
+
+.detial-input>div>input {
+    /* width: 100px; */
+    border: 1px solid #1E9FFF;
+    background: transparent;
+    color: white;
+    border-radius: 0;
+}
+
+.detial-icon {
+    border-top: 1px solid #1E9FFF;
+    border-right: 1px solid #1E9FFF;
+    border-bottom: 1px solid #1E9FFF;
+    font-size: 30px;
+    color: #1E9FFF;
+}
+
+tr {
+    background-color: transparent !important;
+}
+
+tr:hover {
+    background-color: #1E9FFF !important;
+}
+
+.layui-table {
+    color: white;
+}
+
+.layui-table-header {
+    background-color: transparent;
+    box-shadow: 0 0 15px #4274cb inset;
+    border: none;
+}
+
+thead {
+    height: 50px;
+}
+
+thead>tr:hover {
+    background-color: transparent !important;
+}
+
+.layui-table-view {
+    border: none;
+}
+
+.layui-table-page {
+    margin-top: 20px;
+    border: none;
+}
+
+#layui-table-page1 {
+    text-align: center;
+}
+
+.layui-table-cell {
+    height: 100%;
+	text-align: center;
+}
+
+.touxiang {
+    height: 60px;
+}
+
+.layui-table-page>div{
+    text-align: center;
+}
+
+.layui-layer-loading .layui-layer-loading1{
+    width: 100px!important;
+    height: 100px!important;
+    background-size: 100% 100%!important;
+}
+
+.layui_date{
+	position: absolute;
+	right: 0;
+	border: 1px solid #1E9FFF;
+	height: 36px;
+}
+
+.layui-input:focus {
+     border-color: #1E9FFF!important; 
+}
+
+.layui-input:hover {
+     border-color: #1E9FFF!important; 
+}
+
+.layui-laypage a {
+    text-decoration: none;
+    background: transparent;
+    border: none;
+}
+
+.layui-laypage .layui-laypage-spr {
+    color: #999;
+    font-weight: 700;
+    background: transparent;
+    border: none;
+}
+
+.layui-table-patch{
+	display: none;
+>>>>>>> anhuiyou
 }

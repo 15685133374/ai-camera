@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 // 车牌识别详情页面
 // var table ;
 var ai_ability_dict = {
@@ -227,4 +228,259 @@ layui.use(['table', 'laydate'], function() {
 			}
 		}
 	}, '.search_text')
+=======
+// 车牌识别详情页面
+
+//全局定义 域名前缀，方便之后调用
+let host = window.location.host;
+host = 'http://' + host;
+let current_page;
+let domain_name = 'http://192.168.1.120';	//服务器域名
+layui.use(['table', 'laydate', 'laypage'], function() { //调用layui框架里的table laydate laypage 组件
+	var table = layui.table;
+	var laydate = layui.laydate;
+	var laypage = layui.laypage;
+	let total_page_size;	//数据总数，用于分页
+	var t = Array();
+	let tableIns;
+	let api_list;
+
+	//弹出正在加载框
+	let layer_index = layer.load(1, {
+		shade: [0.1, '#fff'] //0.1透明度的白色背景
+	});
+	
+	//获取所有数据
+	function getData() {
+		refresh_token();//刷新token
+		api_list = '/api/v1/ai/list';//所有人脸、车牌识别事件api
+		$.ajax({
+			url:host + api_list,
+			type:'get',
+			dataType:'json',
+			data:{"page_num":1},
+			success:function(response){
+				console.log('response',response)
+				layer.close(layer_index); //数据请求完成之后关闭加载弹窗
+				total_page_size = response.data[0].total_page_size;	//获取数据总数
+				var d = response.data
+				let t = new Array();
+				for (let x in d) {
+					var p = d[x].img_path;
+					var index = p.indexOf('/saveface');
+					var _p = p.slice(index);
+					var one = {
+						img_path: domain_name + _p,
+						time: d[x].time,
+						location:d[x].location,
+						name:d[x].info.name
+					}
+					t.push(one);
+				}
+				sessionStorage.setItem('d', d);
+				tableIns = table.render({ //加载表格数据，顺便赋值，方便后面重载表格
+					elem: '#demo',
+					skin: 'nob', //行边框风格
+					height: 'full-250',
+					limit: 16,
+					data: t,
+					cols: [
+						[ //表头
+							{
+								field: 'name',
+								title: '姓名'
+							},
+							{
+								field: 'time',
+								title: '时间'
+							},
+							{
+								field: 'location',
+								title: '地点'
+							},
+							{
+								field: 'img',
+								title: '抓拍图片',
+								templet: '#titleTpl'
+							}
+						]
+					],
+				
+					// 数据渲染回调。
+					done: function(res, curr, count) {
+						$('.layui-table').css({
+							"background-color": 'transparent',
+							'color': 'white'
+						});
+				
+					}
+				})
+				
+				table_paging(api_list,total_page_size,{"page_num": current_page});	//执行分页
+			},
+			error:function(error){
+				console.log('get data error',error);
+			}
+
+		})
+		
+	}
+	table.render({
+
+	});
+	getData();
+
+
+
+	// 日期时间选择
+	//执行一个laydate实例
+	laydate.render({
+		elem: '#detail-date', //指定元素
+		range: true,
+		theme: '#1E9FFF',
+		format: 'yyyy-MM-dd',
+		done: function(value, date, endDate) {
+
+			let layer_index1 = layer.load(1, {
+				shade: [0.1, '#fff'] //0.1透明度的白色背景
+			});
+			let option_api = '/api/v1/ai/list/date_cal';//按时间查询api
+			refresh_token();//刷新token
+			$.ajax({
+				url: host + option_api,
+				headers:request_header,
+				type: 'get',
+				data: {
+					'value': value,
+					"page_num": 1
+				},
+				dataType: 'json',
+				success: function(res) {
+
+					console.log('筛选返回结果', res)
+					layer.close(layer_index1);
+					if (res.code == 1) {
+						res.data = [{
+							"location": "暂无数据……！"
+						}];
+					} else {
+						for (let x in res.data) {
+							res.data[x].name = res.data[x].info.name;
+							res.data[x].img_path = domain_name + '/saveface/' + res.data[x].img_path.split('/')[5];	//头像
+						}
+					}
+					total_page_size = res.data[0].total_page_size;
+					tableIns.reload({
+						data: res.data,
+					});
+					
+					table_paging(api_list,total_page_size,{"page_num": current_page});	//执行分页
+
+				}
+
+			});
+
+		}
+
+	});
+	
+	//定义分页方法
+	function table_paging(api,all_page,send_data){
+		laypage.render({
+			elem: 'pages',
+			count: all_page,
+			theme: '#447DDB',
+			limit: 16,
+			// limit:10,
+			layout: ['prev', 'page', 'next'],
+			jump: function(obj, first) {
+				if (!first) {
+					current_page = obj.curr;
+					send_data.page_num = current_page;
+					refresh_token();//刷新token
+					$.ajax({
+						url: host + api,
+						headers:request_header,
+						type: 'get',
+						dataType: 'json',
+						data:send_data,
+						success: function(res) {
+							for (var i in res.data) {
+								res.data[i].name = res.data[i].info.name;	//姓名
+								res.data[i].img_path = domain_name + '/saveface/' + res.data[i].img_path.split('/')[5];	//头像
+							}
+		
+							tableIns.reload({ //表格重载
+								data: res.data,
+		
+							});
+		
+						},
+						error:function(){
+							console.log(error)
+						}
+					})
+				}
+			}
+		});
+	}
+	//关键字查询方法
+	function select_events(event) {
+		event.preventDefault();
+		let address_api = '/api/v1/ai/list/fuzzy_query';//模糊查询api
+		let address_value = $('.search_text').val();
+		// console.log('地址关键字',address_value);
+		if (address_value) {
+			let layer_index2 = layer.load(1, {
+				shade: [0.1, '#fff'] //0.1透明度的白色背景
+			});
+			refresh_token();//刷新token
+			$.ajax({
+				url: host + address_api,
+				headers:request_header,
+				type: 'get',
+				data: {
+					'value': address_value,
+					'page_num': 1
+				},
+				dataType: 'json',
+				success: function(res) {
+					layer.close(layer_index2);
+					if (res.code == 1) {
+						res.data = [{
+							"location": "暂无数据……！"
+						}];
+					} else {
+						for (let x in res.data) {
+							res.data[x].name = res.data[x].info.name;
+							res.data[x].img_path = domain_name + '/saveface/' + res.data[x].img_path.split('/')[5];	//头像
+						}
+					}
+					tableIns.reload({
+						data: res.data,
+					});
+					var total_page_size = res.data[0].total_page_size;
+					table_paging(address_api,total_page_size,{'value': address_value});	//执行分页
+
+				}
+
+			});
+		}
+	}
+	//关键字点击按钮搜索
+	$('#search').on({
+		click: function() {
+			select_events(event);
+		}
+	}, '.search_events');
+	
+	//关键字回车搜索
+	$('#search').on({
+		keydown: function(event) {
+			if (event.keyCode == 13) {
+				select_events(event);
+			}
+		}
+	}, '.search_text')
+>>>>>>> anhuiyou
 });

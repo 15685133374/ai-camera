@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!--*******************引入样式************************-->
+    <link rel="stylesheet" href="../lib/layui/css/layui.css" type="text/css">
+    <link rel="stylesheet" href="../css/base.css">
+    <link href="../css/detail.css" type="text/css" rel="stylesheet">
+</head>
+
+<body class="layui-layout-body">
+    <!-- 主体 -->
+    <div class="layui-container-fluid">
+        <!-- 返回按钮 -->
+        <div class="layui-row">
+            <div class="return-btn">
+                <span>返回</span>
+            </div>
+        </div>
+        <div class="layui-container">
+            <div class="layui-row detail-list">
+                <div class="layui-row detail-header">
+                    <h3> <span class="square"></span> 车牌识别详情列表</h3>
+                </div>
+                <div class="layui-row detial-input">
+                    <!-- 时间筛选框 -->
+                    <!-- 注意：这一层元素并不是必须的 -->
+                    <div>
+                        <input type="text" name="title" required placeholder="请输入设备名称" autocomplete="off" class="layui-input" width="100px">
+                        <i class="layui-icon layui-icon-search detial-icon"></i>
+                    </div>
+                    <!-- 摄像头筛选框 -->
+                    <div>
+                        <input type="text" class="layui-input" id="detail-date" width="100px">
+                        <i class="layui-icon layui-icon-date detial-icon"></i>
+                    </div>
+
+                </div>
+                <div class="layui-row" style="margin-top: 20px">
+                    <!-- 列表 -->
+                    <table id="demo" lay-filter="test"></table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 模板 -->
+    <script type="text/html" id="titleTpl">
+        {# <a href="/detail/{{d.id}}" class="layui-table-link">{{d.title}}</a> #}
+        <img src="../images/touxiangtest.png" alt="" class='touxiang'>
+    </script>
+    <!--*******************引入JS************************-->
+    <script src="../node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="../lib/layui/layui.js"></script>
+    <!--*******************引入fun-JS************************-->
+	<script src="../js/get_token.js" type="text/javascript" charset="utf-8"></script>
+    <script src="../js/detail.js"></script>
+</body>
+
+</html>
