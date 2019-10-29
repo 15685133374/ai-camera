@@ -1,5 +1,6 @@
 //事件详情页面
 <<<<<<< HEAD
+<<<<<<< HEAD
 // 车牌识别详情页面
 
 //定义中文词典
@@ -87,6 +88,8 @@ layui.use(['table', 'laydate'], function() {
 				[ //表头
 					// {field: 'wid', title: '序号'},
 =======
+=======
+>>>>>>> anhuiyou
 
 //全局定义 域名前缀
 let host = window.location.host;
@@ -149,6 +152,9 @@ layui.use(['table', 'laydate', 'laypage'], function() {
 						field: 'ai_ability',
 						title: '事件类型'
 					},
+<<<<<<< HEAD
+>>>>>>> anhuiyou
+=======
 >>>>>>> anhuiyou
 					{
 						field: 'time',
@@ -160,10 +166,13 @@ layui.use(['table', 'laydate', 'laypage'], function() {
 					},
 					{
 <<<<<<< HEAD
+<<<<<<< HEAD
 						field: 'ai_ability',
 						title: '事件类型'
 					},
 =======
+=======
+>>>>>>> anhuiyou
 						field:'person',
 						title:'处理人'
 					},
@@ -172,6 +181,9 @@ layui.use(['table', 'laydate', 'laypage'], function() {
 						title:'处理状态'
 					}
 					
+<<<<<<< HEAD
+>>>>>>> anhuiyou
+=======
 >>>>>>> anhuiyou
 				]
 			],
@@ -183,6 +195,7 @@ layui.use(['table', 'laydate', 'laypage'], function() {
 					'color': 'white'
 				});
 				event_res = res.data;
+<<<<<<< HEAD
 <<<<<<< HEAD
 
 			}
@@ -245,6 +258,8 @@ layui.use(['table', 'laydate', 'laypage'], function() {
 
 	//执行一个laydate实例
 =======
+=======
+>>>>>>> anhuiyou
 		
 			}
 		});
@@ -252,12 +267,16 @@ layui.use(['table', 'laydate', 'laypage'], function() {
 
 
 	//调用时间选择器，并筛选相应的数据进行加载
+<<<<<<< HEAD
+>>>>>>> anhuiyou
+=======
 >>>>>>> anhuiyou
 	laydate.render({
 		elem: '#detail-date', //指定元素
 		range: true,
 		theme: '#1E9FFF',
 		done: function(value, date, endDate) {
+<<<<<<< HEAD
 <<<<<<< HEAD
 			console.log('日期范围选择完毕');
 			console.log(value); //得到日期生成的值，如：2017-08-18
@@ -300,6 +319,8 @@ layui.use(['table', 'laydate', 'laypage'], function() {
 					});
 					console.log('解析后的数据', res.data)
 =======
+=======
+>>>>>>> anhuiyou
 			
 			//加载过程调用正在加载弹窗
 			let layer_index1 = layer.load(1, {
@@ -337,6 +358,9 @@ layui.use(['table', 'laydate', 'laypage'], function() {
 					console.log('分页页数',total_page_size)
 					click_watch(); //调用点击一行播放视频方法
 					table_paging(option_api,{'value': value	});	//执行分页
+<<<<<<< HEAD
+>>>>>>> anhuiyou
+=======
 >>>>>>> anhuiyou
 				}
 
@@ -360,8 +384,11 @@ layui.use(['table', 'laydate', 'laypage'], function() {
 			btn_select.eq(i).addClass('active_btn');
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 			get_data(); //调用获取数据函数
 =======
+=======
+>>>>>>> anhuiyou
 			let list_name_api = '/api/v1/waring/list/name';
 			let layer_index = layer.load(1, {
 				shade: [0.1, '#fff'] //0.1透明度的白色背景
@@ -395,6 +422,9 @@ layui.use(['table', 'laydate', 'laypage'], function() {
 				}
 			})
 
+<<<<<<< HEAD
+>>>>>>> anhuiyou
+=======
 >>>>>>> anhuiyou
 
 		}
@@ -404,6 +434,7 @@ layui.use(['table', 'laydate', 'laypage'], function() {
 	$('.event-class ').children('li').on('click', 'a', function() {
 		$(this).addClass('active_btn').parent('li').siblings('li').children('a').removeClass('active_btn');
 		let event = $(this).text();
+<<<<<<< HEAD
 <<<<<<< HEAD
 		// console.log(event);
 		// event_name = btn_select.eq(i).text();
@@ -467,6 +498,8 @@ layui.use(['table', 'laydate', 'laypage'], function() {
 		click: function() {
 			select_event(event);
 =======
+=======
+>>>>>>> anhuiyou
 		if (ai_cn_ability_dict[event]) {
 			event_name = ai_cn_ability_dict[event];
 		}
@@ -621,11 +654,15 @@ function select_events(event){
 	$('#search').on({
 		click: function() {
 			select_events(event);
+<<<<<<< HEAD
+>>>>>>> anhuiyou
+=======
 >>>>>>> anhuiyou
 
 		}
 	}, '.search_events');
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 	$('#search').on({
 		keydown: function(event) {
@@ -638,6 +675,8 @@ function select_events(event){
 });
 
 =======
+=======
+>>>>>>> anhuiyou
 
 	//搜索输入框绑定回车执行搜索方法
 	$('#search').on({
@@ -653,6 +692,9 @@ function select_events(event){
 
 
 //当视频窗口打开时，点击右上角X按钮，关闭当前视频事件
+<<<<<<< HEAD
+>>>>>>> anhuiyou
+=======
 >>>>>>> anhuiyou
 $('.close2').click(function() {
 	$('#video').children('div').hide();

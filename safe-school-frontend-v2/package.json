@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 {
     "name": "safe-school-frontend-v2",
     "version": "1.0.0",
@@ -18,3 +19,25 @@
     "author": "dc",
     "license": "ISC"
 }
+=======
+{
+    "name": "safe-school-frontend-v2",
+    "version": "1.0.0",
+    "description": "校园安全平台前端页面",
+    "main": "index.js",
+    "dependencies": {
+        "axios": "^0.19.0",
+        "echarts": "^4.2.1",
+        "flv.js": "^1.5.0",
+        "jquery": "^3.4.1",
+        "jquery-base64": "^1.0.0",
+        "socket.io": "^2.2.0"
+    },
+    "devDependencies": {},
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "author": "dc",
+    "license": "ISC"
+}
+>>>>>>> anhuiyou

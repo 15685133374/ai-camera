@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="en">
 	<head>
@@ -450,4 +451,458 @@
 
 	</body>
 
+=======
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>设置界面</title>
+		<link href="../lib/bootstrap/css/bootstrap-theme.css" type="text/css" rel="stylesheet">
+		<link href="../lib/bootstrap/css/bootstrap.css" type="text/css" rel="stylesheet">
+		<link href="../css/setting.css" type="text/css" rel="stylesheet">
+		<link rel="stylesheet" type="text/css" href="../css/layer.css" />
+		<!-- <link rel="stylesheet" type="text/css" href="../css/setting.index.css"/> -->
+
+	</head>
+
+	<body>
+		<header>
+			<h1>设置</h1>
+			<!-- <div class="reply" onclick="reply()"><input type="button" class="button_3" value="返回监控平台"></div> -->
+		</header>
+		<div class="container-fluid height_max_box">
+			<div class="row height_max">
+				<div class="col-sm-2 col-md-2 col-lg-2 height_max bg_left">
+					<input type="text" placeholder="条件搜索" class="search">
+					<div class="meun_box">
+						<h3 class="set">未设置</h3>
+						<div class="treebox">
+							<ul class="menu">
+								<li class="level11">
+									<a href="javascript:;" id="firstMenu"><em class="ico ico1"></em>摄像头<i class="down"></i></a>
+									<ul class="level12" id="firstMenuItem">
+										<!-- <li><a href="javascript:;">192.168.1.1</a></li>
+                <li><a href="javascript:;">192.168.1.1</a></li>
+                <li><a href="javascript:;">192.168.1.1</a></li>
+                <li><a href="javascript:;">192.168.1.1</a></li> -->
+									</ul>
+								</li>
+							</ul>
+						</div>
+						<h3 class="set">已设置</h3>
+						<div class="treebox">
+									<ul class="menu">
+										<li class="level11">
+											<a href="javascript:;" id="secondMenu"><em class="ico ico1"></em>摄像头<i class="down"></i></a>
+											<ul class="level12" id="secondMenuItem">
+												<!-- <li><a href="javascript:;">192.168.1.1</a></li>
+						<li><a href="javascript:;">192.168.1.1</a></li>
+						<li><a href="javascript:;">192.168.1.1</a></li>
+						<li><a href="javascript:;">192.168.1.1</a></li> -->
+											</ul>
+										</li>
+									</ul>
+								</div>
+						<!-- <div class="treebox">
+							<ul class="menu">
+								<li class="level1 levelUp">
+									<a href="#none"><em class="ico ico1"></em>教室<i class="down"></i></a>
+									<ul class="level2">
+										<li><a href="javascript:;">
+												<input class="ipaddress" type="text" name="address" value="192.168.1.1" readonly />
+												<b class="glyphicon glyphicon-pencil edit"></b>
+											</a>
+										</li>
+										<li><a href="javascript:;">
+												<input class="ipaddress" type="text" name="address" value="192.168.1.1" readonly />
+												<b class="glyphicon glyphicon-pencil edit"></b>
+											</a>
+										</li>
+										<li><a href="javascript:;">
+												<input class="ipaddress" type="text" name="address" value="192.168.1.1" readonly />
+												<b class="glyphicon glyphicon-pencil edit"></b>
+											</a>
+										</li>
+										<li><a href="javascript:;">
+												<input class="ipaddress" type="text" name="address" value="192.168.1.1" readonly />
+												<b class="glyphicon glyphicon-pencil edit"></b>
+											</a>
+										</li>
+									</ul>
+								</li>
+								<li class="level1">
+									<a href="#none"><em class="ico ico2"></em>操场<i></i></a>
+									<ul class="level2">
+										<li><a href="javascript:;">
+												<input class="ipaddress" type="text" name="address" value="192.168.1.1" readonly />
+												<b class="glyphicon glyphicon-pencil edit"></b>
+											</a>
+										</li>
+										<li><a href="javascript:;">
+												<input class="ipaddress" type="text" name="address" value="192.168.1.1" readonly />
+												<b class="glyphicon glyphicon-pencil edit"></b>
+											</a>
+										</li>
+										<li><a href="javascript:;">
+												<input class="ipaddress" type="text" name="address" value="192.168.1.1" readonly />
+												<b class="glyphicon glyphicon-pencil edit"></b>
+											</a>
+										</li>
+										<li><a href="javascript:;">
+												<input class="ipaddress" type="text" name="address" value="192.168.1.1" readonly />
+												<b class="glyphicon glyphicon-pencil edit"></b>
+											</a>
+										</li>
+									</ul>
+								</li>
+								<li class="level1">
+									<a href="#none"><em class="ico ico3"></em>图书馆<i></i></a>
+									<ul class="level2">
+										<li><a href="javascript:;">
+												<input class="ipaddress" type="text" name="address" value="192.168.1.1" readonly />
+												<b class="glyphicon glyphicon-pencil edit"></b>
+											</a>
+										</li>
+										<li><a href="javascript:;">
+												<input class="ipaddress" type="text" name="address" value="192.168.1.1" readonly />
+												<b class="glyphicon glyphicon-pencil edit"></b>
+											</a>
+										</li>
+										<li><a href="javascript:;">
+												<input class="ipaddress" type="text" name="address" value="192.168.1.1" readonly />
+												<b class="glyphicon glyphicon-pencil edit"></b>
+											</a>
+										</li>
+										<li><a href="javascript:;">
+												<input class="ipaddress" type="text" name="address" value="192.168.1.1" readonly />
+												<b class="glyphicon glyphicon-pencil edit"></b>
+											</a>
+										</li>
+									</ul>
+								</li>
+							</ul>
+						</div> -->
+					</div>
+				</div>
+				<div class="col-sm-10 col-md-10 col-lg-10 height_max bg">
+					<div class="containers">
+              <!-- 人脸识别 -->
+						<div id="1" class="event_list">
+							<div class="position">
+								<span class="span_1">人脸识别</span>
+								<!-- <input type="image" src="../images/Left.png" class="button click"> -->
+								<div class="swap">
+									<span class="temp">关</span>
+								</div>
+							</div>
+
+
+							<!-- 灵敏度 -->
+							<div class="Slider range">
+								<div class="sensitivity">灵敏度</div>
+								<div class="progress1">
+									<div class="progress_bg1">
+										<div class="progress_bar1" disabled="disabled"></div>
+									</div>
+									<div class="progress_btn1" disabled="disabled"></div>
+									<div class="text slide">0%</div>
+								</div>
+								<div class="void"></div>
+
+							</div>
+						</div>
+						<!--车牌识别-->
+						<div id="2" class="event_list">
+							<div class="position_1">
+								<span class="span_1">车牌识别</span>
+								<!-- <input type="image" src="../images/Left.png" class="button click_1"> -->
+								<div class="swap">
+									<span class="temp">关</span>
+								</div>
+							</div>
+						</div>
+						<!--聚众-->
+						<div id="3" class="event_list">
+							<div class="position_2">
+								<span class="span_11">聚众</span>
+								<!-- <input type="image" src="../images/Left.png" class="button_1 click_2"> -->
+								<div class="swap">
+									<span class="temp">关</span>
+								</div>
+							</div>
+							<!--聚众人数-->
+							<div class="position_3">
+								<span class="span_1">聚众人数</span>
+								<input type="text" class="form-control1 text_1 persons" placeholder="请输入人数" aria-describedby="basic-addon1"
+								 readonly="readonly">
+							</div>
+						</div>
+						<!--火灾预警-->
+						<div id="4" class="event_list">
+							<div class="position_4">
+								<span class="span_1">火灾预警</span>
+								<!-- <input type="image" src="../images/Left.png" class="button click_4"> -->
+								<div class="swap">
+									<span class="temp">关</span>
+								</div>
+							</div>
+							<div class="Slider_1 range">
+								<div class="sensitivity">灵敏度</div>
+								<div class="progress2">
+									<div class="progress_bg2">
+										<div class="progress_bar2"></div>
+									</div>
+									<div class="progress_btn2"></div>
+									<div class="text_2 slide">0%</div>
+								</div>
+								<div class="void"></div>
+							</div>
+						</div>
+
+						<!--烟雾预警-->
+						<div id="5" class="event_list">
+							<div class="position_5">
+								<span class="span_1">烟雾预警</span>
+								<!-- <input type="image" src="../images/Left.png" class="button click_5"> -->
+								<div class="swap">
+									<span class="temp">关</span>
+								</div>
+							</div>
+							<div class="Slider_2 range">
+								<div class="sensitivity">灵敏度</div>
+								<div class="progress3">
+									<div class="progress_bg3">
+										<div class="progress_bar3"></div>
+									</div>
+									<div class="progress_btn3"></div>
+									<div class="text_3 slide">0%</div>
+								</div>
+								<div class="void"></div>
+							</div>
+						</div>
+
+						<!--区域入侵-->
+						<div id="6" class="event_list">
+							<div class="position_6">
+								<span class="span_1">区域入侵</span>
+								<!-- <input type="image" src="../images/Left.png" class="button click_6"> -->
+								<div class="swap">
+									<span class="temp">关</span>
+								</div>
+							</div>
+							<div class="input1"><input type="image" src="../images/RegionalLineDrawing.png" class="rld"></div>
+						</div>
+
+
+						<!--姿态检测图标-->
+						<div class="ad"><img src="../images/AttitudeDetection.png"></div>
+
+						<!--求救事件-->
+						<div id="7" class="event_list">
+							<div class="position_7">
+								<span class="span_1">求救事件</span>
+								<!-- <input type="image" src="../images/Left.png" class="button click_7"> -->
+								<div class="swap">
+									<span class="temp">关</span>
+								</div>
+							</div>
+							<div class="Slider_3 range">
+								<div class="sensitivity">灵敏度</div>
+								<div class="progress4">
+									<div class="progress_bg4">
+										<div class="progress_bar4"></div>
+									</div>
+									<div class="progress_btn4"></div>
+									<div class="text_4 slide">0%</div>
+								</div>
+								<div class="void"></div>
+							</div>
+						</div>
+
+						<!--打架事件-->
+						<div id="8" class="event_list">
+							<div class="position_8">
+								<span class="span_1">打架事件</span>
+								<!-- <input type="image" src="../images/Left.png" class="button click_8"> -->
+								<div class="swap">
+									<span class="temp">关</span>
+								</div>
+							</div>
+							<div class="Slider_4 range">
+								<div class="sensitivity">灵敏度</div>
+								<div class="progress5">
+									<div class="progress_bg5">
+										<div class="progress_bar5"></div>
+									</div>
+									<div class="progress_btn5"></div>
+									<div class="text_5 slide">0%</div>
+								</div>
+								<div class="void"></div>
+							</div>
+						</div>
+
+
+						<!--攀高事件-->
+						<div id="9" class="event_list">
+							<div class="position_9">
+								<span class="span_1">攀高事件</span>
+								<!-- <input type="image" src="../images/Left.png" class="button click_9"> -->
+								<div class="swap">
+									<span class="temp">关</span>
+								</div>
+							</div>
+							<div class="input6"><input type="image" src="../images/RegionalLineDrawing.png" class="rld"></div>
+						</div>
+
+						<!--睡岗事件-->
+						<div id="10" class="event_list">
+							<div class="position_10">
+								<span class="span_1">睡岗事件</span>
+								<!-- <input type="image" src="../images/Left.png" class="button click_15"> -->
+								<div class="swap">
+									<span class="temp">关</span>
+								</div>
+							</div>
+							<div class="Slider_6 range">
+								<div class="sensitivity">灵敏度</div>
+								<div class="progress7">
+									<div class="progress_bg7">
+										<div class="progress_bar7"></div>
+									</div>
+									<div class="progress_btn7"></div>
+									<div class="text_7 slide">0%</div>
+								</div>
+								<div class="void"></div>
+							</div>
+						</div>
+
+						<!--离岗事件-->
+						<div id="11" class="event_list">
+							<div class="position_20">
+								<span class="span_1">离岗事件</span>
+								<!-- <input type="image" src="../images/a.png" class="button click_16"> -->
+								<div class="swap">
+									<span class="temp">关</span>
+								</div>
+							</div>
+							<div class="input4"><input type="image" src="../images/RegionalLineDrawing.png" class="rld"></div>
+						</div>
+						<div class="Popup_1 area">
+							<div class=" closed" title="close"><img src="../images/close_.png" ></div>
+							<div class="draw">
+								<canvas id="canvas" width="960" height="540" style="background-image: url('../images/test1.png');background-repeat: no-repeat;background-size: 100% 100%;">
+									<img class="canvas_img" src="../images/test1.png" alt="图片加载失败">
+								</canvas>
+								<p class="text-center" style="margin: 0.625rem;">
+									<button type="button" class="btn-info" onclick="drawLine()">划线</button>
+									<button type="button" class="btn-info draw_area" onclick="drawArea()">划区域</button>
+									<button type="button" class="btn-danger" onclick="del()">删除</button>
+									<button type="submit" class="btn-success" onclick="makeSure()">确定</button>
+								</p>
+							</div>
+							
+						</div>
+
+
+						<!--倒地事件-->
+						<div id="12" class="event_list">
+							<div class="position_11">
+								<span class="span_1">倒地事件</span>
+								<!-- <input type="image" src="../images/Left.png" class="button click_17"> -->
+								<div class="swap">
+									<span class="temp">关</span>
+								</div>
+							</div>
+							<div class="Slider_7 range">
+								<div class="sensitivity">灵敏度</div>
+								<div class="progress8">
+									<div class="progress_bg8">
+										<div class="progress_bar8"></div>
+									</div>
+									<div class="progress_btn8"></div>
+									<div class="text_8 slide">0%</div>
+								</div>
+								<div class="void"></div>
+							</div>
+						</div>
+
+						<!--离床事件-->
+						<div id="13" class="event_list">
+							<div class="position_12">
+								<span class="span_1">离床事件</span>
+								<!-- <input type="image" src="../images/Left.png" class="button click_11"> -->
+								<div class="swap">
+									<span class="temp">关</span>
+								</div>
+							</div>
+							<div class="Slider_8 range">
+								<div class="sensitivity">灵敏度</div>
+								<div class="progress9">
+									<div class="progress_bg9">
+										<div class="progress_bar9"></div>
+									</div>
+									<div class="progress_btn9"></div>
+									<div class="text_9 slide">0%</div>
+								</div>
+								<div class="void"></div>
+							</div>
+						</div>
+
+						<!--攀爬事件-->
+						<div id="14" class="event_list">
+							<div class="position_14">
+								<span class="span_1">攀爬事件</span>
+								<!-- <input type="image" src="../images/Left.png" class=" button click_13"> -->
+								<div class="swap">
+									<span class="temp">关</span>
+								</div>
+							</div>
+							<div class="input2"><input type="image" src="../images/RegionalLineDrawing.png" class="rld"></div>
+						</div>
+
+						<!--闯入事件-->
+						<div id="15" class="event_list">
+							<div class="position_15">
+								<span class="span_1">闯入事件</span>
+								<!-- <input type="image" src="../images/Left.png" class=" button click_14"> -->
+								<div class="swap">
+									<span class="temp">关</span>
+								</div>
+							</div>
+							<div class="input3"><input type="image" src="../images/RegionalLineDrawing.png" class="rld"></div>
+
+						</div>
+
+						<p class="text-center endSubmit">
+							<button type="submit" class="btn-success" title="确定提交">确定</button>
+						</p>
+						<p class="confirm">
+							<button type="button " class="btn-info">设置成功</button>
+						</p>
+					</div>
+				</div>
+				<div class="reply" ><input type="button" class="button_3" value="返回监控平台"></div>
+			</div>
+		</div>
+
+
+		<!--*******************引入lib-JS************************-->
+		<script src="../node_modules/jquery/dist/jquery.min.js"></script>
+		<script src="../lib/fontSize.js"></script>
+		<script src="../lib/bootstrap/js/bootstrap.js"></script>
+		<script src="../lib/layui/layui.js" type="text/javascript" charset="utf-8"></script>
+		<!--*******************引入fun-JS************************-->
+		<!-- <script src="../js/click.js"></script> -->
+		<!-- <script src="../js/easing.js" type="text/javascript" charset="utf-8"></script> -->
+		<!-- <script src="http://www.jq22.com/jquery/jquery-1.10.2.js"></script> -->
+		<!-- <script src="../js/easing.js"></script> -->
+
+		<script src="../js/get_token.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/layer.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/settingSlider.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/setting.js" type="text/javascript" charset="utf-8"></script>
+
+	</body>
+
+>>>>>>> anhuiyou
 </html>
